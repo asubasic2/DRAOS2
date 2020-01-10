@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import NavBar from '../ZaposlenikPages/AdminNavBar';
+import NavBar from './AdminNavBar';
 import Header from '../Header/Header';
 import {ListGroup, Accordion, Card, Button, Nav} from 'react-bootstrap';
 import {Redirect} from 'react-router-dom';
 
 
-class AdminPage extends Component {
+class UrediPonude extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -98,4 +98,4 @@ render(){
 
 }
 
-export default AdminPage;
+export default UrediPonude;

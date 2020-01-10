@@ -12,9 +12,10 @@ render(){
       <Navbar.Collapse id="basic-navbar-nav">
        <Nav className="mr-auto"></Nav>
       
-        <Nav.Link href="/pregledkorisnika"><p className="textlink">Zaposlenici</p> </Nav.Link>
-        <Nav.Link href="/dodajkorisnika"><p className="textlink">Destinacije</p> </Nav.Link>
-        <Nav.Link href="/kupci"><p className="textlink">Kupci</p> </Nav.Link>
+        <Nav.Link href="/pocetnauposlenik"><p className="textlink">Početna</p> </Nav.Link>
+        <Nav.Link href="/urediponude"><p className="textlink">Uređuj ponude</p> </Nav.Link>
+        <Nav.Link href="/uposlenikpostavke"><p className="textlink">Postavke uposlenika</p> </Nav.Link>
+        <Nav.Link href="/klijentipostavke"><p className="textlink">Postavke klijenata</p> </Nav.Link>
         <Nav.Link href="/login"><p className="textlink">Logout</p> </Nav.Link>
         
        

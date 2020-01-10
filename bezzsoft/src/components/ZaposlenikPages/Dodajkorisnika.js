@@ -4,7 +4,7 @@ import Header from '../Header/Header'
 import PrijavaForm from './PrijavaFormAdmin';
 import {Redirect} from 'react-router-dom';
 
-class AdminPage extends Component {
+class Dodajkorisnika extends Component {
 
 render(){
     if(localStorage.getItem('role')!='admin'){
@@ -35,4 +35,4 @@ render(){
 
 }
 
-export default AdminPage;
+export default Dodajkorisnika;

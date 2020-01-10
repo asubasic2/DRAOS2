@@ -30,6 +30,7 @@ class LoginForm extends Component {
           redirect:true,
         })
       ) 
+      localStorage.setItem('role', 'user')
       global.role = 'user'
     }
     else if(this.state.username == 'admin' && this.state.password == 'admin'){
@@ -59,7 +60,7 @@ class LoginForm extends Component {
         return <Redirect to="/home"></Redirect>
       }
       else{
-        return <Redirect to="/pregledkorisnika"></Redirect>
+        return <Redirect to="/pocetnauposlenik"></Redirect>
       }
     }
 
@@ -70,7 +71,7 @@ class LoginForm extends Component {
       <Form >
           <Form.Group>
             
-            <Form.Control type="username" placeholder="Username" value={this.state.username} onChange={(e)=>{
+            <Form.Control type="username" placeholder="Korisničko ime" value={this.state.username} onChange={(e)=>{
               this.setState({
                 username:e.target.value
               })
@@ -79,7 +80,7 @@ class LoginForm extends Component {
 
           <Form.Group controlId="formBasicPassword">
 
-            <Form.Control type="password" placeholder="Password" value={this.state.password} onChange={(e)=>{
+            <Form.Control type="password" placeholder="Šifra" value={this.state.password} onChange={(e)=>{
               this.setState({
                 password:e.target.value
               })
@@ -90,7 +91,7 @@ class LoginForm extends Component {
           
       </Form>
       <button className="submit" onClick={this.onLogin} >
-      LOGIN
+      Prijavi se
       </button>
       </div>
     )

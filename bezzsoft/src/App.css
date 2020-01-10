@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,400i,500,700&subset=latin-ext');
 .mainpage{
 
   width: 100%;
@@ -8,6 +9,7 @@
   color: #535252;
   text-align-last: center;
 }
+
 .header{
 
   width: 95%;
@@ -25,8 +27,8 @@
 }
 
 .logo{
-  height: 23em;
-  width: 25em;
+  height: 15em;
+  width: 16em;
   position: relative;
   top: 50%;
   left: 50%;
@@ -258,4 +260,50 @@
   color: #535252;
   padding: 0.5em;
   font-size: 1.5em;
+}
+
+.engleski{
+  margin: 10%;
+  color: white;
+  background-image: url("./hexellence.png");
+  background-repeat: repeat;
+  background-color: #131111;
+  width: 98%;
+  margin-left: 0.05em;
+  margin-top:1em;
+  border:0px;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+.engleski:hover {
+  color:#131111;
+  background-color: red;
+}
+
+.bosanski{
+  margin: 10%;
+  color: white;
+  background-image: url("./hexellence.png");
+  background-repeat: repeat;
+  background-color: #131111;
+  width: 98%;
+  margin-left: 0.05em;
+  margin-top:1em;
+  border:0px;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+.bosanski:hover{
+  color:#131111;
+  background-color: blue;
+}
+
+.bosanski:active, .engleski:active{
+  color: white;
 }
