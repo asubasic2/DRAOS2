@@ -11,6 +11,7 @@ import Pocetna from './components/HomePage/Pocetna'
 import uposlenikpostavke from './components/ZaposlenikPages/PostavkeUposlenika'
 import PocetnaUposlenik from './components/ZaposlenikPages/PocetnaUposlenik'
 import DetaljiUposlenik from './components/ZaposlenikPages/DetaljiUposlenik'
+import DodajUposlenika from './components/ZaposlenikPages/DodajUposlenika'
 
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/uposlenikpostavke" component={uposlenikpostavke} />
           <Route exact path="/pocetnauposlenik" component={PocetnaUposlenik} />
           <Route exact path="/detaljiuposlenik" component={DetaljiUposlenik} />
+          <Route exact path="/dodajuposlenika" component={DodajUposlenika} />
         </Switch>
       </BrowserRouter>
       

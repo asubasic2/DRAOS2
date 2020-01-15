@@ -52,7 +52,7 @@ class LoginForm extends Component {
     var u1 = {
       id: 1,
       ImePrezime: "Ajdin Ločić",
-      VrstaRada: "Salter",
+      VrstaRada: "Šalter",
       Email: "alocic1@etf.unsa.ba",
       Zaposlen: "01.02.2019.",
       Plata: "800 KM"
@@ -60,7 +60,7 @@ class LoginForm extends Component {
     var u2 = {
       id: 2,
       ImePrezime: "Nina Mijatović",
-      VrstaRada: "Salter",
+      VrstaRada: "Šalter",
       Email: "nmijatovic@etf.unsa.ba",
       Zaposlen: "01.02.2019.",
       Plata: "800 KM"
@@ -76,7 +76,7 @@ class LoginForm extends Component {
     var u4 = {
       id: 4,
       ImePrezime: "Mujo Mujić",
-      VrstaRada: "Salter",
+      VrstaRada: "Šalter",
       Email: "mmujic@etf.unsa.ba",
       Zaposlen: "01.02.2019.",
       Plata: "800 KM"

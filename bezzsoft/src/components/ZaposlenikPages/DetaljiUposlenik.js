@@ -10,7 +10,9 @@ constructor(props){
     super(props);
     this.state = {
         id: localStorage.getItem("idupo"),
-        uposlenik: {}
+        uposlenik: {},
+        pretraga: "",
+        redirect: false
     }
 }
 
@@ -25,10 +27,31 @@ componentDidMount(){
     }
 }
 
+azurirajUposlenika(){
+
+}
+
+obrisiUposlenika(){
+    var uposlenici = JSON.parse(localStorage.getItem("uposlenik"))
+    for(var i=0; i<uposlenici.length; i++){
+        if(uposlenici[i].id == this.state.id){
+            uposlenici.splice(i,1);
+        }
+    }
+    localStorage.setItem("uposlenik", JSON.stringify(uposlenici))
+    alert("korisnik " + this.state.uposlenik.ImePrezime + " je uspješno obrisan")
+    this.setState({
+        redirect: true
+    })
+}
+
 
 render(){
     if(localStorage.getItem('role')!='admin'){
         return <Redirect to="/login"></Redirect>
+    }
+    if(this.state.redirect){
+        return <Redirect to="/uposlenikpostavke"></Redirect>
     }
   
     return(
@@ -40,6 +63,7 @@ render(){
            
         
             <div className="body">
+               
             <h3 className="naslov" style = {{textAlign: 'center', marginBottom: '1em'}}>Detalji o uposleniku {this.state.uposlenik.ImePrezime}</h3>
 
             <Nav.Link href = "/uposlenikpostavke" ><button className="submit"> Nazad </button> </Nav.Link>
@@ -84,13 +108,17 @@ render(){
                                             }
                                         }) }}/> </td>
                         </tr>
-                            <th></th>
-                            <th><Nav.Link href = "/uposlenikpostavke" ><button className="submit"> Ažuriraj </button> </Nav.Link></th>
                     </tbody>
                     </Table>
                     </Col>
                 </Row>
             </Container>
+            <div>                          
+                <button className="submit"> Ažuriraj </button>
+            </div> 
+            <div>     
+                <button className="submit" onClick = {()=>{this.obrisiUposlenika()}}>Obriši uposlenika</button>
+            </div>
             </div>
         </div>
     
