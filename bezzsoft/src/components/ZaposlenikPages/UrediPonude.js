@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import NavBar from './AdminNavBar';
-import Header from '../Header/Header';
-import {ListGroup, Accordion, Card, Button, Nav} from 'react-bootstrap';
+import NavBar from '../ZaposlenikPages/AdminNavBar';
+import Header from '../Header/Header'
+import {Container, Row, Col, Table, Nav} from 'react-bootstrap';
+import PrijavaForm from './PrijavaFormAdmin';
 import {Redirect} from 'react-router-dom';
 
 
@@ -9,88 +10,64 @@ class UrediPonude extends Component {
     constructor(props){
         super(props);
         this.state = {
-            korisnici: [],
-            id: localStorage.getItem("id")
+            ponude: [],
+            stanje: false
         }
     }
 
-  /*   componentDidMount(){
-       var data = new FormData();
-        data.append("username",localStorage.getItem('username'));
-        data.append("password",localStorage.getItem('password'));
-        const options = {
-            method: "OPTIONS",
-            body: data
-        }
-        fetch("/autentifikacija/Korisnik", options).
-            then((response) => response.json()).
-                then((responseJson) => {
-                    var o=Object.keys(responseJson).length
-                    var l=[]
-                    for( var i=0;i<o;i++){
-                        if(parseInt(responseJson[i].id, 10) !== parseInt(this.state.id, 10))
-                            l.push(responseJson[i]);
-                    }
-                    this.setState({
-                        korisnici:l
-                    })
-                })
+    componentDidMount(){
+        this.setState({
+            ponude: JSON.parse(localStorage.getItem('ponude'))
+        })
     }
 
-    obrisi(korisnik) {
-        var data = new FormData();
-        data.append("username",localStorage.getItem('username'));
-        data.append("password",localStorage.getItem('password'));
-        const options = {
-            method: "DELETE",
-            body: data
-        }
-        fetch("/autentifikacija/Korisnik/" + korisnik.id, options).
-            then((response) => response.json).
-                then((responseJson) => {
-                })
-    } */
 render(){
-    /*const korisnici1 = this.state.korisnici.map((korisnik, i=-1) =>{
-        i++;
+   const svePonude = this.state.ponude.map((up) =>{
         return (
-            <Card>
-                <Card.Header>
-                    <Accordion.Toggle as={Button} variant="link" eventKey= {i}>
-                        <p>Ime i prezime:  {korisnik.ime} {korisnik.prezime}</p>
-                    </Accordion.Toggle>
-                    </Card.Header>
-                    <Accordion.Collapse eventKey= {i}>
-                    <Card.Body>
-                        <p>Username:  {korisnik.username}</p>
-                        <p>Broj telefona: {korisnik.broj_telefona}</p> 
-                        <p>Rola: {korisnik.role.role}</p> 
-                        <Nav.Link href = "/pregledkorisnika" > <button className="submittable" onClick = {function(){this.obrisi(korisnik)}.bind(this)}>Obriši</button> </Nav.Link>
-                    </Card.Body>
-                    </Accordion.Collapse>
-                </Card>
+                <tr>
+                    <td style = {{textAlign: 'center'}}>{up.hotel}</td>
+                    <td style = {{textAlign: 'center'}}>{up.mjesto}</td>
+                    <td style = {{textAlign: 'center'}}>{up.drzava}</td>
+                    <td><Nav.Link href = "/detaljiPonude" > <button className="submit" onClick = {()=>{localStorage.setItem("idIspo", up.id)}}> Edit </button> </Nav.Link></td>
+                </tr>
+        
         );
-    }) */
+    }) 
+
     if(localStorage.getItem('role')!='admin'){
         return <Redirect to="/login"></Redirect>
     }
+  
     return(
         <div className="mainpage">
             
             <NavBar></NavBar>
         
             <Header></Header>
-            
+           
         
-        
-    
             <div className="body">
-                <h3 className="naslov">Zaposlenici</h3>
-                <h2>Dodaj uposlenika</h2>
-                <h2>Izbrisi uposlenika</h2>
-                <h2>Lista vodiča</h2>
+            <h3 className="naslov" style = {{textAlign: 'center', marginBottom: '1em'}}>Ponude</h3>
+            <Container style = {{marginBottom: '2em'}}>
+                <Row>
+                    <Col>
+                    <Table striped bordered hover>
+                        <tr>
+                            <th style = {{textAlign: 'center'}}>HOTEL</th>
+                            <th style = {{textAlign: 'center'}}>MJESTO</th>
+                            <th style = {{textAlign: 'center'}}>DRŽAVA</th>
+                            <th style = {{textAlign: 'center'}}>POSTAVKE</th>
+                        </tr>
+                    <tbody>
+                        {svePonude}
+                    </tbody>
+                    </Table>
+                    </Col>
+                </Row>
+            </Container>
+            <Nav.Link href = "/dodajPonudu" ><button className="submit"> Dodaj ponudu </button> </Nav.Link>
             </div>
-        
+            
         </div>
     
     );
