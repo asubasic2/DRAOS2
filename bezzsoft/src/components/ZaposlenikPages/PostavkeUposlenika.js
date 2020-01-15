@@ -22,13 +22,6 @@ class PostavkeUposlenika extends Component {
     }
 
     pretraga(){
-        u = this.state.uposlenik
-        u1 
-        for(var i=0; i<u.length; i++){
-            if(u.ImePrezime == this.state.pretraga){
-
-            }
-        }
     }
 render(){
    const uposlenici = this.state.uposlenik.map((up) =>{
