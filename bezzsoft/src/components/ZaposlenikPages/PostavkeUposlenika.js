@@ -11,7 +11,9 @@ class PostavkeUposlenika extends Component {
         this.state = {
             uposlenik: [],
             stanje: false,
-            pretraga: ""
+            pretraga: "",
+            osvjezi: false,
+            pretrazeno: []
         }
     }
 
@@ -22,6 +24,24 @@ class PostavkeUposlenika extends Component {
     }
 
     pretraga(){
+        if(this.state.pretraga == "") {
+            this.setState({
+                osvjezi: false,
+                uposlenik: JSON.parse(localStorage.getItem('uposlenik'))
+            })
+            return ;
+        }
+        var u = this.state.uposlenik
+        var u1 = []
+        for(var i=0; i<u.length; i++){
+            if(u[i].ImePrezime.includes(this.state.pretraga)){
+                u1.push(u[i])
+            }
+        }
+        this.setState({
+            osvjezi: true,
+            uposlenik: u1
+        })
     }
 render(){
    const uposlenici = this.state.uposlenik.map((up) =>{
@@ -55,7 +75,7 @@ render(){
                 <Table striped bordered hover >
                     <tr >
                         <td style={{width: '30%'}}>
-                            <Form.Control type="text" value = {this.state.pretraga} placeholder = {"Pretraži..."} onChange={(e)=>{this.setState({ pretraga: e.target.value })}}/>
+                            <Form.Control type="text" value = {this.state.pretraga} placeholder = {"Pretraži po imenu..."} onChange={(e)=>{this.setState({ pretraga: e.target.value })}}/>
                         </td>
                         <td style={{width: '0.5%'}}> <Button variant="primary" onClick = {()=>{this.pretraga()}}>Pretraga</Button></td>
     

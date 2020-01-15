@@ -62,9 +62,9 @@ render(){
         
             <div className="body">
             <h3 className="naslov" style = {{textAlign: 'center', marginBottom: '1em'}}>Dodaj uposlenika</h3>
-
-            <Nav.Link href = "/uposlenikpostavke" ><button className="submit"> Nazad </button> </Nav.Link>
-
+            <div style={{marginBottom: "2em"}}>
+                <Nav.Link href = "/uposlenikpostavke" ><button className="submit"> Nazad </button> </Nav.Link>
+            </div>
            <Container style = {{marginBottom: '2em'}}>
                 <Row>
                     <Col>
@@ -108,7 +108,7 @@ render(){
                                         }) }}/> </td>
                         </tr>
                             <th></th>
-                            <th><button className="submit" onClick = {()=> {this.dodajUposlenika()}}> Ažuriraj </button></th>
+                            <th><button className="submit" onClick = {()=> {this.dodajUposlenika()}}> Dodaj </button></th>
                     </tbody>
                     </Table>
                     </Col>

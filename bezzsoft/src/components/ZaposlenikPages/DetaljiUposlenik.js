@@ -9,6 +9,11 @@ class DetaljiUposlenik extends Component {
 constructor(props){
     super(props);
     this.state = {
+        ImePrezime: "",
+        Plata: "",
+        Email: "",
+        Zaposlen: "",
+        VrstaRada: "",
         id: localStorage.getItem("idupo"),
         uposlenik: {},
         pretraga: "",
@@ -18,6 +23,7 @@ constructor(props){
 
 componentDidMount(){
     var uposlenici = JSON.parse(localStorage.getItem("uposlenik"))
+    console.log(uposlenici)
     for(var i=0; i<uposlenici.length; i++){
         if(uposlenici[i].id == this.state.id){
             this.setState({
@@ -28,7 +34,24 @@ componentDidMount(){
 }
 
 azurirajUposlenika(){
-
+    var uposlenici = JSON.parse(localStorage.getItem("uposlenik"))
+    for(var i=0; i<uposlenici.length; i++){
+        if(uposlenici[i].id == this.state.id){
+            if(this.state.ImePrezime != "")
+                uposlenici[i].ImePrezime = this.state.ImePrezime
+            if(this.state.VrstaRada != "")
+                uposlenici[i].VrstaRada = this.state.VrstaRada
+            if(this.state.Email != "")
+                uposlenici[i].Email = this.state.Email
+            if(this.state.Zaposlen != "")
+                uposlenici[i].Zaposlen = this.state.Zaposlen
+            if(this.state.Plata != "")
+                uposlenici[i].Plata = this.state.Plata
+        }
+    }
+    console.log(uposlenici)
+    localStorage.setItem("uposlenik", JSON.stringify(uposlenici))
+    alert("korisnik " + this.state.uposlenik.ImePrezime + " je uspješno ažuriran")
 }
 
 obrisiUposlenika(){
@@ -66,7 +89,9 @@ render(){
                
             <h3 className="naslov" style = {{textAlign: 'center', marginBottom: '1em'}}>Detalji o uposleniku {this.state.uposlenik.ImePrezime}</h3>
 
-            <Nav.Link href = "/uposlenikpostavke" ><button className="submit"> Nazad </button> </Nav.Link>
+            <div style={{marginBottom: "2em"}}>
+                <Nav.Link href = "/uposlenikpostavke" ><button className="submit"> Nazad </button> </Nav.Link>
+            </div>
             <Container style = {{marginBottom: '2em'}}>
                 <Row>
                     <Col>
@@ -74,38 +99,30 @@ render(){
                     <tbody>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Radno mjesto: </th>
-                            <td><Form.Control type="text" value = {this.state.uposlenik.VrstaRada} placeholder = {this.state.uposlenik.VrstaRada} onChange={(e)=>{
+                            <td><Form.Control type="text" value = {this.state.VrstaRada} placeholder = {this.state.uposlenik.VrstaRada} onChange={(e)=>{
                                         this.setState({ 
-                                            uposlenik: { 
                                                 VrstaRada: e.target.value
-                                            }
                                         }) }}/> </td>
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>E-mail: </th>
-                            <td><Form.Control type="text" value = {this.state.uposlenik.Email} placeholder = {this.state.uposlenik.Email} onChange={(e)=>{
+                            <td><Form.Control type="text" value = {this.state.Email} placeholder = {this.state.uposlenik.Email} onChange={(e)=>{
                                         this.setState({ 
-                                            uposlenik: { 
                                                 Email: e.target.value
-                                            }
                                         }) }}/> </td>
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Zaposlen: </th>
-                            <td><Form.Control type="text" value = {this.state.uposlenik.Zaposlen} placeholder = {this.state.uposlenik.Zaposlen} onChange={(e)=>{
+                            <td><Form.Control type="text" value = {this.state.Zaposlen} placeholder = {this.state.uposlenik.Zaposlen} onChange={(e)=>{
                                         this.setState({ 
-                                            uposlenik: { 
                                                 Zaposlen: e.target.value
-                                            }
                                         }) }}/> </td>
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Plata: </th>
-                            <td><Form.Control type="text" value = {this.state.uposlenik.Plata} placeholder = {this.state.uposlenik.Plata} onChange={(e)=>{
+                            <td><Form.Control type="text" value = {this.state.Plata} placeholder = {this.state.uposlenik.Plata} onChange={(e)=>{
                                         this.setState({ 
-                                            uposlenik: { 
                                                 Plata: e.target.value
-                                            }
                                         }) }}/> </td>
                         </tr>
                     </tbody>
@@ -114,7 +131,7 @@ render(){
                 </Row>
             </Container>
             <div>                          
-                <button className="submit"> Ažuriraj </button>
+                <button className="submit" onClick = {()=>{this.azurirajUposlenika()}}> Ažuriraj </button>
             </div> 
             <div>     
                 <button className="submit" onClick = {()=>{this.obrisiUposlenika()}}>Obriši uposlenika</button>
