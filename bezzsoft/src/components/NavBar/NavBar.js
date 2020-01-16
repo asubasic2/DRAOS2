@@ -17,7 +17,6 @@ render(){
         <Nav.Link href="/zimovanje"><p className="textlink">Zimovanje</p></Nav.Link>
         <Nav.Link href="/novagodina"><p className="textlink">Nova godina</p></Nav.Link>
         <Nav.Link href="/login"><p className="textlink">Login</p> </Nav.Link>
-        <Nav.Link href="/prijava"><p className="textlink">Prijava</p> </Nav.Link>
         <Nav.Link href="/kontakt"><p className="textlink">Kontakt</p></Nav.Link>
       </Navbar.Collapse>
       </Navbar>
