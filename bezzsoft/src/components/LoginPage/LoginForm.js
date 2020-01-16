@@ -48,6 +48,7 @@ class LoginForm extends Component {
   }
 
   componentDidMount(){
+    localStorage.setItem("role", "")
     var uposlenik = []
     var u1 = {
       id: 1,
@@ -103,7 +104,7 @@ class LoginForm extends Component {
 
     if(this.state.redirect === true){
       if(global.role=="user"){
-        return <Redirect to="/home"></Redirect>
+        return <Redirect to="/pocetna"></Redirect>
       }
       else{
         return <Redirect to="/pocetnauposlenik"></Redirect>
