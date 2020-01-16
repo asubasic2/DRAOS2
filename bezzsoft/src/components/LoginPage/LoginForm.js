@@ -96,6 +96,48 @@ class LoginForm extends Component {
     uposlenik.push(u4)
     uposlenik.push(u5)
     localStorage.setItem("uposlenik", JSON.stringify(uposlenik))
+    var ponude = []
+    var nudim1 = {
+      id: 1,
+      hotel: "Aqua",
+      mjesto: "Nica",
+      drzava: "Francuska"
+
+    }
+    var nudim2 = {
+      id: 2,
+      hotel: "Viva",
+      mjesto: "Las Vegas",
+      drzava: "SAD"
+
+    }
+    var nudim3 = {
+      id: 3,
+      hotel: "Bistrica",
+      mjesto: "Jahorina",
+      drzava: "BIH"
+
+    }
+    var nudim4 = {
+      id: 4,
+      hotel: "FIS",
+      mjesto: "Vlašić",
+      drzava: "BIH"
+
+    }
+    var nudim5 = {
+      id: 4,
+      hotel: "Palma",
+      mjesto: "Makarska",
+      drzava: "Hrvatska"
+
+    }
+    ponude.push(nudim1)
+    ponude.push(nudim2)
+    ponude.push(nudim3)
+    ponude.push(nudim4)
+    ponude.push(nudim5)
+    localStorage.setItem("ponude", JSON.stringify(ponude))
   }
 
   
