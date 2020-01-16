@@ -13,17 +13,17 @@ constructor(props){
         drugi: "",
         treci:"",
         svePonude: [],
+        redirect: false,
         spremi: function(jedan, dva, tri){
             var nijeValjda = this.svePonude;
-            var ponuda = { id: this.nijeValjda.lenght + 1,
+            var ponuda = { id: nijeValjda.lenght + 1,
                 hotel: this.prvi,
             mjesto: this.drugi,
             drzava: this.treci
             }
             nijeValjda.push(ponuda)
-            localStorage.setItem("ponude", JSON.stringify(nijeValjda));
-        },
-        redirect: false
+            localStorage.setItem("ponude", JSON.stringify(nijeValjda))
+        }
     }
 }
 
@@ -39,6 +39,10 @@ componentDidMount(){
 render(){
     if(localStorage.getItem('role')!='admin'){
         return <Redirect to="/login"></Redirect>
+    }
+    if(this.state.redirect){
+        alert("Ponuda uspješno unešena!")
+        return <Redirect to="/urediPonude"></Redirect>    
     }
   
     return(
@@ -85,7 +89,8 @@ render(){
 
                         </tr>
                             <th></th>
-                            <th><Nav.Link href = "/urediPonude" ><button className="submit" onClick = {() => {this.state.spremi()}}> Dodaj </button> </Nav.Link></th>
+                            <th><button className="submit" onClick = {() => {this.state.spremi();
+                                                                            this.setState({redirect:true})}}> Dodaj </button></th>
                     </tbody>
                     </Table>
                     </Col>
