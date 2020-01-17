@@ -16,6 +16,8 @@ import DetaljiPonude from './components/ZaposlenikPages/DetaljiPonude'
 import DodajPonudu from './components/ZaposlenikPages/DodajPonudu'
 import Ljetovanje from './components/HomePage/Ljeto'
 import Zimovanje from './components/HomePage/Zima'
+import Nova from './components/HomePage/Nova'
+import Putovanja from './components/HomePage/Put'
 
 
 import './App.css';
@@ -43,6 +45,8 @@ function App() {
           <Route exact path="/dodajPonudu" component={DodajPonudu} />
           <Route exact path="/ljetovanje" component={Ljetovanje} />
           <Route exact path="/zimovanje" component={Zimovanje} />
+          <Route exact path="/nova" component={Nova} />
+          <Route exact path="/putovanje" component={Putovanja} />
         </Switch>
       </BrowserRouter>
       
