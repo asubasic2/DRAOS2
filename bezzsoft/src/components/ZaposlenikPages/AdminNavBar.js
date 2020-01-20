@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Navbar,Nav} from 'react-bootstrap';
-
+import {Navbar,Nav,Image} from 'react-bootstrap';
+import bih from './bih.png'
+import eng from './eng.png'
 class AdminNavBar extends Component {
 
 render(){
@@ -17,8 +18,8 @@ render(){
         <Nav.Link href="/uposlenikpostavke"><p className="textlink">Postavke uposlenika</p> </Nav.Link>
         <Nav.Link href="/klijentipostavke"><p className="textlink">Postavke klijenata</p> </Nav.Link>
         <Nav.Link href="/login"><p className="textlink">Logout</p> </Nav.Link>
-        
-       
+        <Nav.Link href="/pocetnauposlenik"><Image src={bih} style={{width:'3em', height:'2em', padding:'none'}} roundedCircle/></Nav.Link>
+        <Nav.Link href="/pocetnauposlenik"><Image src={eng} style={{width:'3em', height:'2em', padding:'none'}} roundedCircle/></Nav.Link>
       </Navbar.Collapse>
       </Navbar>
     </div>  

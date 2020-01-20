@@ -13,13 +13,13 @@ render(){
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="mr-auto"></Nav>
-        <Nav.Link href="/pocetna"><p className="textlink">Početna</p></Nav.Link>
-        <Nav.Link href="/ljetovanje"><p className="textlink">Ljetovanje</p></Nav.Link>
-        <Nav.Link href="/putovanja"><p className="textlink">Putovanja</p></Nav.Link>
-        <Nav.Link href="/zimovanje"><p className="textlink">Zimovanje</p></Nav.Link>
-        <Nav.Link href="/novagodina"><p className="textlink">Nova godina</p></Nav.Link>
+        <Nav.Link href="/pocetnaeng"><p className="textlink">Home</p></Nav.Link>
+        <Nav.Link href="/ljetoeng"><p className="textlink">Summer</p></Nav.Link>
+        <Nav.Link href="/putovanja"><p className="textlink">Travel</p></Nav.Link>
+        <Nav.Link href="/zimovanje"><p className="textlink">Winter</p></Nav.Link>
+        <Nav.Link href="/novagodina"><p className="textlink">New year</p></Nav.Link>
         <Nav.Link href="/login"><p className="textlink">Login</p> </Nav.Link>
-        <Nav.Link href="/kontakt"><p className="textlink">Kontakt</p></Nav.Link>
+        <Nav.Link href="/kontakt"><p className="textlink">Contact</p></Nav.Link>
         <Nav.Link href="/pocetna"><Image src={bih} style={{width:'3em', height:'2em', padding:'none'}} roundedCircle/></Nav.Link>
         <Nav.Link href="/pocetnaeng"><Image src={eng} style={{width:'3em', height:'2em', padding:'none'}} roundedCircle/></Nav.Link>
       </Navbar.Collapse>
