@@ -15,7 +15,12 @@ constructor(props){
         Email: "",
         Zaposlen: "",
         Plata: "",
-        redirect: false
+        redirect: false,
+        radStatus: false,
+        plataStatus: false,
+        emailStatus: false,
+        zaposlenStatus: false,
+        imeStatus: false
     }
 }
 
@@ -27,6 +32,57 @@ componentDidMount(){
 }
 
 dodajUposlenika(){
+    var greska = ""
+    const regexEmail = /(^[a-zA-Z0-9]+@[a-zA-Z]+.com$|^[a-zA-Z0-9]+@etf.unsa.ba$)/g
+    const regexdatum = /^\d{2}.\d{2}.\d{4}.$/g
+    const regexplata = /^\d+ KM$/g
+    this.setState({
+        radStatus: false,
+        plataStatus: false,
+        emailStatus: false,
+        zaposlenStatus: false,
+        imeStatus: false
+    })
+    if(this.state.ImePrezime === ""){
+        greska = "Polje ime i prezime ne smije biti prazno.\n"
+        this.setState({
+            imeStatus: true
+        })
+        alert(greska)
+        return ;
+    }
+    if(this.state.VrstaRada.localeCompare("Šalter") !== 0 && this.state.VrstaRada.localeCompare("Vodič") !== 0){
+        greska = "Neispravno radno mjesto! Unesite Vodič ili Šalter.\n"
+        this.setState({
+            radStatus: true
+        })
+        alert(greska)
+        return ;
+    }
+    if(!regexEmail.test(this.state.Email)){
+        greska = "Neispravno unešen E-mail! Mora biti formata test@test.com.\n"
+        this.setState({
+            emailStatus: true
+        })
+        alert(greska)
+        return ;
+    }
+    if(!regexdatum.test(this.state.Zaposlen)){
+        greska = "Neispravan format datuma! Unesite datum u formatu dd.mm.yyyy."
+        this.setState({
+            zaposlenStatus: true
+        })
+        alert(greska)
+        return ;
+    }
+    if(!regexplata.test(this.state.Plata)){
+        greska = "Neispravan format unosa plate! Unesite platu u formatu: \"xxxx KM\""
+        this.setState({
+            plataStatus: true
+        })
+        alert(greska)
+        return ;
+    }
     var u1 = this.state.uposlenici
     var uposlenik = {
         id: u1.length+1,
@@ -72,14 +128,14 @@ render(){
                     <tbody>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Ime i Prezime: </th>
-                            <td><Form.Control required type="text" onChange={(e)=>{
+                            <td><Form.Control isInvalid = {this.state.imeStatus} required type="text" onChange={(e)=>{
                                         this.setState({ 
                                                 ImePrezime: e.target.value
                                         }) }}/> </td>
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Radno mjesto: </th>
-                            <td> <Form.Control required as="select" onChange={(val)=>this.setState({VrstaRada: val.target.value})}>
+                            <td> <Form.Control required as="select" isInvalid = {this.state.radStatus} onChange={(val)=>this.setState({VrstaRada: val.target.value})}>
                                 <option value="">Posao...</option>
                                 <option value="Šalter">Šalter</option>
                                 <option value="Vodič">Vodič</option>
@@ -88,21 +144,21 @@ render(){
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>E-mail: </th>
-                            <td><Form.Control required type="text" onChange={(e)=>{
+                            <td><Form.Control isInvalid = {this.state.emailStatus} required type="text" onChange={(e)=>{
                                         this.setState({ 
                                                 Email: e.target.value
                                         }) }}/> </td>
                         </tr>
                         <tr>
-                            <th  style = {{textAlign: 'right'}}>Zaposlen: </th>
-                            <td><Form.Control required type="text"onChange={(e)=>{
+                            <th  style = {{textAlign: 'right'}}>Zaposlen od: </th>
+                            <td><Form.Control isInvalid = {this.state.zaposlenStatus} required type="text"onChange={(e)=>{
                                         this.setState({ 
                                                 Zaposlen: e.target.value
                                         }) }}/> </td>
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Plata: </th>
-                            <td><Form.Control required type="text" onChange={(e)=>{
+                            <td><Form.Control isInvalid = {this.state.plataStatus} required type="text" onChange={(e)=>{
                                         this.setState({ 
                                                 Plata: e.target.value
                                         }) }}/> </td>
