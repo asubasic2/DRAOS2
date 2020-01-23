@@ -32,6 +32,7 @@ class LoginForm extends Component {
       ) 
       localStorage.setItem('role', 'user')
       global.role = 'user'
+      return ;
     }
     else if(this.state.username == 'admin' && this.state.password == 'admin'){
       this.setState(
@@ -41,10 +42,24 @@ class LoginForm extends Component {
       )
       localStorage.setItem('role', 'admin')
       global.role = 'admin'
+      return ;
     }
-    else{
-      alert("Pogrešan username ili password ")
+    var korisnici = JSON.parse(localStorage.getItem("klijent"))
+    for(var i=0; i<korisnici.length; i++){
+      if(korisnici[i].username === this.state.username){
+        if(korisnici[i].password === this.state.password){
+          localStorage.setItem('role', 'user')
+          global.role = 'user'
+          this.setState(
+            ()=>({
+              redirect:true,
+            })
+          ) 
+          return ;
+        }
+      }
     }
+    alert("Pogrešno korisničko ime ili šifra.")
   }
 
   componentDidMount(){
