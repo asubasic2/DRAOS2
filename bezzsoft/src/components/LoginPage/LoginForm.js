@@ -138,6 +138,55 @@ class LoginForm extends Component {
     ponude.push(nudim4)
     ponude.push(nudim5)
     localStorage.setItem("ponude", JSON.stringify(ponude))
+
+    var k1 = {
+      id: 1,
+      imeprezime: "Admir Subašić",
+      email: "asubasic2@etf.unsa.ba",
+      username: "asubasic2",
+      password: "neki",
+      telefon: "061/111-222",
+      racun: "4406522884781126"
+    }
+    var k2 = {
+      id: 2,
+      imeprezime: "Nina Mijatović",
+      username: "nmijatovic1",
+      password: "neki",
+      telefon: "061/222-333",
+      racun: "5389697114304580"
+    }
+    var k3 = {
+      id: 3,
+      imeprezime: "Ajdin Ločić",
+      username: "alocic1",
+      password: "neki",
+      telefon: "061/333-444",
+      racun: "5390107567254982"
+    }
+    var k4 = {
+      id: 4,
+      imeprezime: "Hrvoje Hrvatinić",
+      username: "hhrvatinic1",
+      password: "neki",
+      telefon: "061/444-555",
+      racun: "5124646174228973"
+    }
+    var k5 = {
+      id: 5,
+      imeprezime: "Neki Klikent",
+      username: "nklijent1",
+      password: "neki",
+      telefon: "061/555-666",
+      racun: "5533491965137231"
+    }
+    var klijenti = []
+    klijenti.push(k1)
+    klijenti.push(k2)
+    klijenti.push(k3)
+    klijenti.push(k4)
+    klijenti.push(k5)
+    localStorage.setItem("klijent", JSON.stringify(klijenti))
   }
 
   

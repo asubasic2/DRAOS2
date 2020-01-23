@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import NavBar from '../NavBar/NavBar';
+import UserNavBar from '../ZaposlenikPages/AdminNavBar';
+import {Nav} from 'react-bootstrap'
 import Header from '../Header/Header'
 import PrijavaForm from './PrijavaForm';
 
@@ -9,15 +10,14 @@ render(){
     return(
         <div className="mainpage">
             
-            <NavBar></NavBar>
+            <UserNavBar></UserNavBar>
         
             <Header></Header>
         
         
     
             <div className="body">
-                <h3 className="naslov">Prijava </h3>
-
+                <h3 className="naslov" style = {{textAlign: 'center'}}>Prijava </h3>
                 <PrijavaForm></PrijavaForm>
                 
         

@@ -4,7 +4,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 import HomePage from './components/HomePage/HomePage';
 import PrijavaPage from './components/PrijavaPage/PrijavaPage';
 import AdminPage from './components/ZaposlenikPages/UrediPonude';
-import AdminPage1 from './components/ZaposlenikPages/Dodajkorisnika';
+import AdminPage1 from './components/ZaposlenikPages/Klijenti';
 import UserHomePage from './components/KorisnikPages/UserHomePage';
 import Profil from './components/KorisnikPages/Profil'
 import Pocetna from './components/HomePage/Pocetna'
@@ -18,6 +18,7 @@ import Ljetovanje from './components/HomePage/Ljeto'
 import Zimovanje from './components/HomePage/Zima'
 import Pocetnaeng from './components/Eng/HomePage/PocetnaEng'
 import ljetoeng from './components/Eng/HomePage/LjetoEng'
+import detaljiklijent from './components/ZaposlenikPages/DetaljiKlijent'
 import './App.css';
 
 
@@ -45,6 +46,7 @@ function App() {
           <Route exact path="/zimovanje" component={Zimovanje} />
           <Route exact path="/pocetnaeng" component={Pocetnaeng} />
           <Route exact path="/ljetoeng" component={ljetoeng} />
+          <Route exact path="/detaljiklijent" component={detaljiklijent} />
         </Switch>
       </BrowserRouter>
       
