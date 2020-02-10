@@ -187,6 +187,8 @@ class LoginForm extends Component {
     klijenti.push(k4)
     klijenti.push(k5)
     localStorage.setItem("klijent", JSON.stringify(klijenti))
+    var sveZelje = []
+    localStorage.setItem("meso", JSON.stringify(sveZelje))
   }
 
   
