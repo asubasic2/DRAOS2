@@ -19,6 +19,7 @@ import Zimovanje from './components/HomePage/Zima'
 import Pocetnaeng from './components/Eng/HomePage/PocetnaEng'
 import ljetoeng from './components/Eng/HomePage/LjetoEng'
 import detaljiklijent from './components/ZaposlenikPages/DetaljiKlijent'
+import listaZelja from './components/KorisnikPages/ListaZelja'
 import './App.css';
 
 
@@ -47,6 +48,7 @@ function App() {
           <Route exact path="/pocetnaeng" component={Pocetnaeng} />
           <Route exact path="/ljetoeng" component={ljetoeng} />
           <Route exact path="/detaljiklijent" component={detaljiklijent} />
+          <Route exact path="/listaZelja" component={listaZelja} />
         </Switch>
       </BrowserRouter>
       

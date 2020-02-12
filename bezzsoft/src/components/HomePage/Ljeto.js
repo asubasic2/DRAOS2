@@ -2,13 +2,20 @@ import React, { Component } from 'react';
 import NavBar from '../NavBar/NavBar';
 import UserNav from '../KorisnikPages/UserNavBar'
 import Header from '../Header/Header'
-import { Nav, Card, Button, CardDeck, CardColumns } from 'react-bootstrap'
+import { Nav, Card, CardDeck, CardColumns, Button } from 'react-bootstrap'
 import maldiviSlika from './maldivi.jpg'
 import kapaSlika from './kapadocia.jpg'
 import maraSlika from './marakes.jpg'
 import vegasSlika from './vegas.jpg'
 
 class HomePage extends Component {
+
+dodajZelju(zelja){
+    var dajGa =  JSON.parse(localStorage.getItem('meso'));
+    var zeljaJSON = {mjesto: zelja}
+    dajGa.push(zeljaJSON)
+    localStorage.setItem("meso", JSON.stringify(dajGa))
+}
 
 render(){ 
     if(localStorage.getItem('role') == 'user'){
@@ -29,6 +36,7 @@ render(){
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
                                 <button className="submit">Pogledaj ponude!</button>
+                                <button className="submit" onClick={()=>{this.dodajZelju("Maldivi")}}>Dodaj u želje</button>
                             </Card.Body>
                         </Card>
                         <Card style={{ padding:'2em'}}>
@@ -39,6 +47,7 @@ render(){
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
                                 <button className="submit">Pogledaj ponude!</button>
+                                <button className="submit" onClick={()=>{this.dodajZelju("Kapadokija")}}>Dodaj u želje</button>
                             </Card.Body>
                             </Card>
                     </CardDeck>
@@ -52,6 +61,7 @@ render(){
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
                                 <button className="submit">Pogledaj ponude!</button>
+                                <button className="submit" onClick={()=>{this.dodajZelju("Marakeš")}}>Dodaj u želje</button>
                             </Card.Body>
                         </Card>
                         <Card style={{ padding:'2em'}}>
@@ -62,6 +72,7 @@ render(){
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
                                 <button className="submit">Pogledaj ponude!</button>
+                                <button className="submit" onClick={()=>{this.dodajZelju("Las Vegas")}}>Dodaj u želje</button>
                             </Card.Body>
                         </Card>
                     </CardDeck>

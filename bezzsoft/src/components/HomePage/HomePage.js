@@ -12,6 +12,7 @@ render(){
     localStorage.setItem('prijavljen',false);
     localStorage.setItem('role','neprijavljen');
     return(
+        
         <div className="mainpage">
             <Redirect to="/pocetna"></Redirect>
                    
