@@ -114,37 +114,57 @@ class LoginForm extends Component {
     var ponude = []
     var nudim1 = {
       id: 1,
-      hotel: "Aqua",
-      mjesto: "Nica",
-      drzava: "Francuska"
+      hotel: "Embudu Village",
+      zvjezdica: 4,
+      soba: 124,
+      opis: "Poznat je po zadivljujućem grebenu kao i spektakularnim mestima za ronjenje svetske klase, od kojih se njih 35 nalazi u neposrednoj blizini. Raže, ajkule, kornjače, murinke i mnoge druge neverovatne životinje mogu da se nađu oko grebena. Takođe nudi mnoštvo sadržaja, pored prekrasne prirode i idiličnih pogleda nudi zabavu i sport.",
+      cijena: "2000 KM",
+      mjesto: "Maldivi",
+      drzava: "Maldivi"
 
     }
     var nudim2 = {
       id: 2,
       hotel: "Viva",
-      mjesto: "Las Vegas",
-      drzava: "SAD"
+      zvjezdica: 5,
+      soba: 124,
+      opis: "Poznat je po zadivljujućem grebenu kao i spektakularnim mestima za ronjenje svetske klase, od kojih se njih 35 nalazi u neposrednoj blizini. Raže, ajkule, kornjače, murinke i mnoge druge neverovatne životinje mogu da se nađu oko grebena. Takođe nudi mnoštvo sadržaja, pored prekrasne prirode i idiličnih pogleda nudi zabavu i sport.",
+      cijena: "1560 KM",
+      mjesto: "Kapadokija",
+      drzava: "Turska"
 
     }
     var nudim3 = {
       id: 3,
       hotel: "Bistrica",
-      mjesto: "Jahorina",
-      drzava: "BIH"
+      zvjezdica: 4,
+      soba: 124,
+      opis: "Poznat je po zadivljujućem grebenu kao i spektakularnim mestima za ronjenje svetske klase, od kojih se njih 35 nalazi u neposrednoj blizini. Raže, ajkule, kornjače, murinke i mnoge druge neverovatne životinje mogu da se nađu oko grebena. Takođe nudi mnoštvo sadržaja, pored prekrasne prirode i idiličnih pogleda nudi zabavu i sport.",
+      cijena: "1000 KM",
+      mjesto: "Marakeš",
+      drzava: "Maroko"
 
     }
     var nudim4 = {
       id: 4,
-      hotel: "FIS",
-      mjesto: "Vlašić",
-      drzava: "BIH"
+      hotel: "Vdara Hotel & Spa at ARIA Las Vegas",
+      zvjezdica: 5,
+      soba: 300,
+      opis: "Ovaj resort nalazi se u aveniji Las Vegas Strip te nudi spa centar s potpunom uslugom. Svi suitevi imaju priključnu stanicu za iPod i TV ravnog ekrana veličine 107 cm. Moderni suitevi u objektu Vdara Hotel & Spa at ARIA Las Vegas obuhvaćaju čajnu kuhinju i blagovaonicu. U ovom resortu bez kockarnice nije dopušteno pušenje. Resort obuhvaća isključivo suiteve, a pojedini su posebno opremljeni za boravak gostiju sa psima. Objekt Vdara Hotel & Spa at ARIA Las Vegas ima krovni bazen okružen manjim bazenima. U baru pokraj bazena poslužuju se lagani obroci i kokteli. U sklopu resorta Vdara Hotel & Spa at ARIA Las Vegas smještena je ekskluzivna trgovina prehrambenih proizvoda Market Cafe, koja obuhvaća i kafić. U ovoj je trgovini moguće kupiti razne lagane zalogaje i svježe namirnice. Bar Vice Versa Pation and Lounge at Vdara tijekom večeri poslužuje koktele u suvremenom ozračju. Svakog petka i subote u večernjim se satima održavaju nastupi glazbenika uživo.",
+      cijena: "5000 KM",
+      mjesto: "Las Vegas",
+      drzava: "SAD"
 
     }
     var nudim5 = {
-      id: 4,
+      id: 5,
       hotel: "Palma",
-      mjesto: "Makarska",
-      drzava: "Hrvatska"
+      zvjezdica: 4,
+      soba: 124,
+      opis: "Poznat je po zadivljujućem grebenu kao i spektakularnim mestima za ronjenje svetske klase, od kojih se njih 35 nalazi u neposrednoj blizini. Raže, ajkule, kornjače, murinke i mnoge druge neverovatne životinje mogu da se nađu oko grebena. Takođe nudi mnoštvo sadržaja, pored prekrasne prirode i idiličnih pogleda nudi zabavu i sport.",
+      cijena: "3000 KM",
+      mjesto: "Las Vegas",
+      drzava: "SAD"
 
     }
     ponude.push(nudim1)
