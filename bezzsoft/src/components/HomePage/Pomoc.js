@@ -9,50 +9,98 @@ class Pomoc extends Component {
 
 render(){ 
 
-    return(
-        <div className="mainpage">
-            
-            <NavBar></NavBar> 
-
-            <Header></Header>
-
-            <div className="body">
-            <h2 className="naslov" style = {{textAlign: 'center', padding: '0.5em'}}>Upustvo za kupca</h2>
-            <div className="opis">
-                <p> 
-                    Kupac može da razgleda na stanici destinacije, ali za rezervaciju i dodavanje destinacije u listu želja treba da se registruje. <br></br>
-                    (implementirano je da radnik registruje kupca, za testiranje ukucamo u korisničko ime i šifru: korisnik ). <br></br>
-                    Kupac kad uđe na stanicu turističke agencije bude pozicioniran na početnu stanicu. <br></br>
-                    Kupac može da izabere na početnoj stanici neku destinaciju(nisu raspoređene po kategorijama). <br></br>
-                    Kupac može da izabere destinaciju po kategorijama: Ljetovanje, Nova Godina, Zimovanje i Putovanja. <br></br>
-                    Samo je za ljetovanje implementirano "Pogledaj ponude". <br></br>
-                    Nakon što korisnik odabere "Pogledaj ponude" može izvršiti rezervaciju ili staviti u listu želja. <br></br>
-                    U meniju korisnik može pronaći opciju "Lista želja", gdje može vidjeti spisak selektovanih destinacija
-                    (možemo ih brisati). <br></br>
-
-                </p>
+    if(localStorage.getItem('role')=='user')
+        return (
+            <div className="mainpage">
                 
-            </div>
+                <UserNav></UserNav> 
 
-            <h3 style = {{textAlign: 'center'}}>Upustvo za zaposlenika</h3>
-            <div className="opis">
-                <p>
-                    Zaposlenik se u ovom slučaju loguje(radi testiranja koristmo za korisničko ime i šifru: admin). <br></br>
-                    Zaposlenik registruje novog zaposlenika. <br></br>
-                    Kada se zaposlenik loguje ima pregled o broju uposlenika, putovanja, klijenata i rezervacija. <br></br>
-                    Korisnik ima meni koji se sastoji od početne stranice, uređivanja ponuda, postavke uposlenika, postavke klijenata i logouta. <br></br>
-                    Odabirom uređivanja ponuda uposlenik može da dodaje nove ponude i da edituje stare ponude.
-                    U opciji postavke uposlenika korisnik može da doda novog uposlenika, ima pregled liste zaposlenih i može izvršiti pretraživanje  uposlenika. <br></br>
-                    U postavkama klijenata postoji lista klijenata sa svojim osnovnim podacima, klijenete možemo da dodajemo, editujemo i da pretražujemo.<br></br>
+                <Header></Header>
+
+                <div className="body">
+                <h2 className="naslov" style = {{textAlign: 'center', padding: '0.5em'}}>Upustvo za kupca</h2>
+                <div className="opis">
+                    <p> 
+                        Kupac može da razgleda na stanici destinacije, ali za rezervaciju i dodavanje destinacije u listu želja treba da se registruje. <br></br>
+                        (implementirano je da radnik registruje kupca, za testiranje ukucamo u korisničko ime i šifru: korisnik ). <br></br>
+                        Kupac kad uđe na stanicu turističke agencije bude pozicioniran na početnu stanicu. <br></br>
+                        Kupac može da izabere na početnoj stanici neku destinaciju(nisu raspoređene po kategorijama). <br></br>
+                        Kupac može da izabere destinaciju po kategorijama: Ljetovanje, Nova Godina, Zimovanje i Putovanja. <br></br>
+                        Samo je za ljetovanje implementirano "Pogledaj ponude". <br></br>
+                        Nakon što korisnik odabere "Pogledaj ponude" može izvršiti rezervaciju ili staviti u listu želja. <br></br>
+                        U meniju korisnik može pronaći opciju "Lista želja", gdje može vidjeti spisak selektovanih destinacija
+                        (možemo ih brisati). <br></br>
+
+                    </p>
                     
+                </div>
 
-                </p>
+                <h3 style = {{textAlign: 'center'}}>Upustvo za zaposlenika</h3>
+                <div className="opis">
+                    <p>
+                        Zaposlenik se u ovom slučaju loguje(radi testiranja koristmo za korisničko ime i šifru: admin). <br></br>
+                        Zaposlenik registruje novog zaposlenika. <br></br>
+                        Kada se zaposlenik loguje ima pregled o broju uposlenika, putovanja, klijenata i rezervacija. <br></br>
+                        Korisnik ima meni koji se sastoji od početne stranice, uređivanja ponuda, postavke uposlenika, postavke klijenata i logouta. <br></br>
+                        Odabirom uređivanja ponuda uposlenik može da dodaje nove ponude i da edituje stare ponude.
+                        U opciji postavke uposlenika korisnik može da doda novog uposlenika, ima pregled liste zaposlenih i može izvršiti pretraživanje  uposlenika. <br></br>
+                        U postavkama klijenata postoji lista klijenata sa svojim osnovnim podacima, klijenete možemo da dodajemo, editujemo i da pretražujemo.<br></br>
+                        
+
+                    </p>
+                    
+                </div>
+
+                </div>
+
+            </div>
+        );
+    else
+        return(
+            
+            <div className="mainpage">
                 
-            </div>
+                <NavBar></NavBar> 
+
+                <Header></Header>
+
+                <div className="body">
+                <h2 className="naslov" style = {{textAlign: 'center', padding: '0.5em'}}>Upustvo za kupca</h2>
+                <div className="opis">
+                    <p> 
+                        Kupac može da razgleda na stanici destinacije, ali za rezervaciju i dodavanje destinacije u listu želja treba da se registruje. <br></br>
+                        (implementirano je da radnik registruje kupca, za testiranje ukucamo u korisničko ime i šifru: korisnik ). <br></br>
+                        Kupac kad uđe na stanicu turističke agencije bude pozicioniran na početnu stanicu. <br></br>
+                        Kupac može da izabere na početnoj stanici neku destinaciju(nisu raspoređene po kategorijama). <br></br>
+                        Kupac može da izabere destinaciju po kategorijama: Ljetovanje, Nova Godina, Zimovanje i Putovanja. <br></br>
+                        Samo je za ljetovanje implementirano "Pogledaj ponude". <br></br>
+                        Nakon što korisnik odabere "Pogledaj ponude" može izvršiti rezervaciju ili staviti u listu želja. <br></br>
+                        U meniju korisnik može pronaći opciju "Lista želja", gdje može vidjeti spisak selektovanih destinacija
+                        (možemo ih brisati). <br></br>
+
+                    </p>
+                    
+                </div>
+
+                <h3 style = {{textAlign: 'center'}}>Upustvo za zaposlenika</h3>
+                <div className="opis">
+                    <p>
+                        Zaposlenik se u ovom slučaju loguje(radi testiranja koristmo za korisničko ime i šifru: admin). <br></br>
+                        Zaposlenik registruje novog zaposlenika. <br></br>
+                        Kada se zaposlenik loguje ima pregled o broju uposlenika, putovanja, klijenata i rezervacija. <br></br>
+                        Korisnik ima meni koji se sastoji od početne stranice, uređivanja ponuda, postavke uposlenika, postavke klijenata i logouta. <br></br>
+                        Odabirom uređivanja ponuda uposlenik može da dodaje nove ponude i da edituje stare ponude.
+                        U opciji postavke uposlenika korisnik može da doda novog uposlenika, ima pregled liste zaposlenih i može izvršiti pretraživanje  uposlenika. <br></br>
+                        U postavkama klijenata postoji lista klijenata sa svojim osnovnim podacima, klijenete možemo da dodajemo, editujemo i da pretražujemo.<br></br>
+                        
+
+                    </p>
+                    
+                </div>
+
+                </div>
 
             </div>
-
-        </div>
     
     );
 }

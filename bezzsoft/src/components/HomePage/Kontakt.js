@@ -15,10 +15,56 @@ const mapStyles = {
 class Kontakt extends Component {
 
 render(){ 
+    if(localStorage.getItem('role')=='user')
+        return(
+            <div className="mainpage">
+                
+                <UserNav></UserNav> 
 
-    return(
-        <div className="mainpage">
+                <Header></Header>
+
+                <div className="body">
+                <h2 className="naslov" style = {{textAlign: 'Left', padding: '0.5em'}}>Kontakt</h2>
+                <div className="opis">
+                    <p>
+                        Kontakt telefon: 033/225-883 <br></br>
+                        Fax: 033/225-883 <br></br>
+                        Adresa: Zmaja od Bosne bb <br></br>
+                        
+                    </p>
+                    <Map
+                        google={this.props.google}
+                        zoom={14}
+                        style={mapStyles}
             
+                        initialCenter={{
+                        lat: 43.854070,
+                        lng: 18.390200
+                        }}
+
+                    >
+                    <Marker
+                        position = {{lat: 43.854070, lng: 18.390200}}
+                        name = {"ANA"}
+                    /> 
+        
+            </Map>
+                    
+                </div>
+
+                
+                    
+                
+
+                </div>
+
+            </div>
+        
+        );
+    else
+        return (
+            <div className="mainpage">
+                
             <NavBar></NavBar> 
 
             <Header></Header>
@@ -38,8 +84,8 @@ render(){
                     style={mapStyles}
         
                     initialCenter={{
-                     lat: 43.854070,
-                     lng: 18.390200
+                    lat: 43.854070,
+                    lng: 18.390200
                     }}
 
                 >
@@ -47,8 +93,8 @@ render(){
                     position = {{lat: 43.854070, lng: 18.390200}}
                     name = {"ANA"}
                 /> 
-       
-          </Map>
+    
+        </Map>
                 
             </div>
 
@@ -60,7 +106,7 @@ render(){
 
         </div>
     
-    );
+        );
 }
 
 }
