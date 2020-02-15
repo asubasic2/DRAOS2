@@ -26,6 +26,7 @@ import listaZelja from './components/KorisnikPages/ListaZelja'
 import detaljiHotel from './components/KorisnikPages/DetaljiHotel'
 import pomoc from './components/HomePage/Pomoc'
 import kontakt from './components/HomePage/Kontakt'
+import PomocAdmin from './components/ZaposlenikPages/PomocAdmin'
 import './App.css';
 
 
@@ -60,6 +61,7 @@ function App() {
           <Route exact path="/sviHoteli" component={sviHoteli} />
           <Route exact path="/pomoc" component={pomoc} />
           <Route exact path="/kontakt" component={kontakt} />
+          <Route exact path="/pomocadmin" component={PomocAdmin} />
         </Switch>
       </BrowserRouter>
       
