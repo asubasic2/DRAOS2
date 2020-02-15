@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Form} from 'react-bootstrap';
-import {Redirect} from 'react-router-dom';
+import { Form } from 'react-bootstrap';
+import { Redirect } from 'react-router-dom';
 
 
 
@@ -9,60 +9,77 @@ import {Redirect} from 'react-router-dom';
 
 class LoginForm extends Component {
 
-  
+
   constructor(props) {
     super(props);
 
-      this.state = {
-        redirect: false,
-        username:'',
-        password:'',
-      };
-      this.onLogin = this.onLogin.bind(this)
+    this.state = {
+      redirect: false,
+      username: '',
+      password: '',
+    };
+    this.onLogin = this.onLogin.bind(this)
+  }
+  handleKeyPressUsername(event) {
+    var clickedId = event.key;
+    if (clickedId == "ArrowDown") {
+      // console.log("Clicked")
+      document.getElementById("passwordfield").focus()
+    }
   }
 
-    
+  handleKeyPressPassword(event) {
+    var clickedId = event.key;
+    if (clickedId == "ArrowUp") {
+      // console.log("Clicked")
+      document.getElementById("userfield").focus()
+    }
+  }
+
+
+
+
   onLogin() {
-    
-    if(this.state.username == 'korisnik' && this.state.password == 'korisnik'){
+
+    if (this.state.username == 'korisnik' && this.state.password == 'korisnik') {
       this.setState(
-        ()=>({
-          redirect:true,
+        () => ({
+          redirect: true,
         })
-      ) 
+      )
       localStorage.setItem('role', 'user')
       global.role = 'user'
-      return ;
+      return;
     }
-    else if(this.state.username == 'admin' && this.state.password == 'admin'){
+    else if (this.state.username == 'admin' && this.state.password == 'admin') {
       this.setState(
-        ()=>({
-          redirect:true,
+        () => ({
+          redirect: true,
         })
       )
       localStorage.setItem('role', 'admin')
       global.role = 'admin'
-      return ;
+      return;
     }
     var korisnici = JSON.parse(localStorage.getItem("klijent"))
-    for(var i=0; i<korisnici.length; i++){
-      if(korisnici[i].username === this.state.username){
-        if(korisnici[i].password === this.state.password){
+    for (var i = 0; i < korisnici.length; i++) {
+      if (korisnici[i].username === this.state.username) {
+        if (korisnici[i].password === this.state.password) {
           localStorage.setItem('role', 'user')
           global.role = 'user'
           this.setState(
-            ()=>({
-              redirect:true,
+            () => ({
+              redirect: true,
             })
-          ) 
-          return ;
+          )
+          return;
         }
       }
     }
     alert("Pogrešno korisničko ime ili šifra.")
   }
 
-  componentDidMount(){
+  componentDidMount() {
     localStorage.setItem("role", "")
     var uposlenik = []
     var u1 = {
@@ -81,7 +98,7 @@ class LoginForm extends Component {
       Zaposlen: "01.02.2019.",
       Plata: '800'
     }
-    var u3 = { 
+    var u3 = {
       id: 3,
       ImePrezime: "Admir Subašić",
       VrstaRada: "Vodič",
@@ -226,47 +243,49 @@ class LoginForm extends Component {
     localStorage.setItem("meso", JSON.stringify(sveZelje))
   }
 
-  
+
 
   render() {
 
-    if(this.state.redirect === true){
-      if(global.role=="user"){
+    if (this.state.redirect === true) {
+      if (global.role == "user") {
         return <Redirect to="/pocetna"></Redirect>
       }
-      else{
+      else {
         return <Redirect to="/pocetnauposlenik"></Redirect>
       }
     }
 
     return (
-     
+
       <div className="loginforma">
 
-      <Form >
+        <Form >
           <Form.Group>
-            
-            <Form.Control type="username" placeholder="Korisničko ime" value={this.state.username} onChange={(e)=>{
+
+            <Form.Control type="username" placeholder="Korisničko ime" id='userfield' value={this.state.username} onChange={(e) => {
               this.setState({
-                username:e.target.value
+                username: e.target.value
               })
-            }}/>
+            }}
+              onKeyDown={this.handleKeyPressUsername} />
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">
 
-            <Form.Control type="password" placeholder="Šifra" value={this.state.password} onChange={(e)=>{
+            <Form.Control type="password" placeholder="Šifra" id='passwordfield' value={this.state.password} onChange={(e) => {
               this.setState({
-                password:e.target.value
+                password: e.target.value
               })
-            }}/>
+            }}
+              onKeyDown={this.handleKeyPressPassword} />
           </Form.Group>
-          
-          
-          
-      </Form>
-      <button className="submit" onClick={this.onLogin} >
-      Prijavi se
+
+
+
+        </Form>
+        <button className="submit" onClick={this.onLogin} >
+          Prijavi se
       </button>
       </div>
     )
