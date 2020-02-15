@@ -23,6 +23,43 @@ constructor(props){
         imeStatus: false
     }
 }
+handleKeyPresszaposlenOsobe(event) {
+    var clickedId = event.key;
+    if (clickedId == "ArrowDown") {    
+        document.getElementById("plataOsobe").focus()       
+    }
+    if (clickedId == "ArrowUp") {    
+        document.getElementById("emailOsobe").focus()       
+    }
+  }
+
+  handleKeyPressemailOsobe(event) {
+    var clickedId = event.key;
+    if (clickedId == "ArrowDown") {    
+        document.getElementById("zaposlenOsobe").focus()       
+    }
+    if (clickedId == "ArrowUp") {    
+        document.getElementById("posaoOsobe").focus()       
+    }
+  }
+
+  handleKeyPressimeOsobe(event) {
+    var clickedId = event.key;
+    if (clickedId == "ArrowDown") {    
+        document.getElementById("posaoOsobe").focus()       
+    }
+  }
+
+  handleKeyPressplataOsobe(event) {
+    var clickedId = event.key;
+    if (clickedId == "ArrowDown") {    
+        document.getElementById("imeOsobe").focus()       
+    }
+    if (clickedId == "ArrowUp") {    
+        document.getElementById("zaposlenOsobe").focus()       
+    }
+  }
+
 
 componentDidMount(){
     var u = JSON.parse(localStorage.getItem("uposlenik"))
@@ -128,40 +165,48 @@ render(){
                     <tbody>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Ime i Prezime: </th>
-                            <td><Form.Control isInvalid = {this.state.imeStatus} required type="text" onChange={(e)=>{
+                            <td><Form.Control isInvalid = {this.state.imeStatus} id = "imeOsobe" required type="text" onChange={(e)=>{
                                         this.setState({ 
                                                 ImePrezime: e.target.value
-                                        }) }}/> </td>
+                                        }) }}
+                                        onKeyDown={this.handleKeyPressimeOsobe}
+                                       
+                                        /> </td>
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Radno mjesto: </th>
-                            <td> <Form.Control required as="select" isInvalid = {this.state.radStatus} onChange={(val)=>this.setState({VrstaRada: val.target.value})}>
+                            <td> <Form.Control required as="select" isInvalid = {this.state.radStatus} id = "posaoOsobe"
+                            onChange={(val)=>this.setState({VrstaRada: val.target.value})}>
                                 <option value="">Posao...</option>
                                 <option value="Šalter">Šalter</option>
                                 <option value="Vodič">Vodič</option>
+                               
                                 </Form.Control>
                             </td>
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>E-mail: </th>
-                            <td><Form.Control isInvalid = {this.state.emailStatus} required type="text" onChange={(e)=>{
+                            <td><Form.Control isInvalid = {this.state.emailStatus} id="emailOsobe" required type="text" onChange={(e)=>{
                                         this.setState({ 
                                                 Email: e.target.value
-                                        }) }}/> </td>
+                                        }) }}
+                                        onKeyDown={this.handleKeyPressemailOsobe}/> </td>
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Zaposlen od: </th>
-                            <td><Form.Control isInvalid = {this.state.zaposlenStatus} required type="text"onChange={(e)=>{
+                            <td><Form.Control isInvalid = {this.state.zaposlenStatus} id="zaposlenOsobe" required type="text"onChange={(e)=>{
                                         this.setState({ 
                                                 Zaposlen: e.target.value
-                                        }) }}/> </td>
+                                        }) }}
+                                        onKeyDown={this.handleKeyPresszaposlenOsobe}/> </td>
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Plata (KM): </th>
-                            <td><Form.Control isInvalid = {this.state.plataStatus} required type="text" onChange={(e)=>{
+                            <td><Form.Control isInvalid = {this.state.plataStatus} id="plataOsobe" required type="text" onChange={(e)=>{
                                         this.setState({ 
                                                 Plata: e.target.value
-                                        }) }}/> </td>
+                                        }) }}
+                                        onKeyDown={this.handleKeyPressplataOsobe}/> </td>
                         </tr>
                             <th></th>
                             <th><button className="submit" onClick = {()=> {this.dodajUposlenika()}}> Dodaj </button></th>
