@@ -4,6 +4,13 @@ import UserNav from '../KorisnikPages/UserNavBar'
 import Header from '../Header/Header'
 import { Nav, Card, Button, CardDeck, CardColumns } from 'react-bootstrap'
 import {Redirect} from 'react-router-dom';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+
+
+const mapStyles = {
+    width: '50%',
+    height: '50%'
+  };
 
 class Kontakt extends Component {
 
@@ -17,21 +24,37 @@ render(){
             <Header></Header>
 
             <div className="body">
-            <h2 className="naslov" style = {{textAlign: 'center', padding: '0.5em'}}>Pomoć u korištenju naše stranice</h2>
+            <h2 className="naslov" style = {{textAlign: 'Left', padding: '0.5em'}}>Kontakt</h2>
             <div className="opis">
                 <p>
-                    BeeZsoft aplikacija omogućava pčelarima jednostavno vođenje dnevnika dnevnih i mjesečnih aktivnosti, kao i o detaljima za svaku pojedinačnu košnicu. Mogućnost, praćenja troškova i dobiti olakšava pčelaru da efikasno procijeni isplativost svake košnice/društva i da unaprijed predvidi aktivnosti u poboljšanju omjera.
+                    Kontakt telefon: 033/225-883 <br></br>
+                    Fax: 033/225-883 <br></br>
+                    Adresa: Zmaja od Bosne bb <br></br>
+                    
                 </p>
+                <Map
+                    google={this.props.google}
+                    zoom={14}
+                    style={mapStyles}
+        
+                    initialCenter={{
+                     lat: 43.854070,
+                     lng: 18.390200
+                    }}
+
+                >
+                <Marker
+                    position = {{lat: 43.854070, lng: 18.390200}}
+                    name = {"ANA"}
+                /> 
+       
+          </Map>
                 
             </div>
 
-            <h3 style = {{textAlign: 'center'}}>Pomoć u korištenju naše stranice</h3>
-            <div className="opis">
-                <p>
-                    BeeZsoft aplikacija omogućava pčelarima jednostavno vođenje dnevnika dnevnih i mjesečnih aktivnosti, kao i o detaljima za svaku pojedinačnu košnicu. Mogućnost, praćenja troškova i dobiti olakšava pčelaru da efikasno procijeni isplativost svake košnice/društva i da unaprijed predvidi aktivnosti u poboljšanju omjera.
-                </p>
+            
                 
-            </div>
+            
 
             </div>
 
@@ -42,4 +65,6 @@ render(){
 
 }
 
-export default Kontakt;
+export default GoogleApiWrapper({
+    apiKey: 'AIzaSyDNTzCIJRSztaCuX6AvD3P54lxvbvUt01g'
+  })(Kontakt);

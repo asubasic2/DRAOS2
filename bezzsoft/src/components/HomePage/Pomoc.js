@@ -20,7 +20,7 @@ render(){
             <h2 className="naslov" style = {{textAlign: 'center', padding: '0.5em'}}>Pomoć u korištenju naše stranice</h2>
             <div className="opis">
                 <p>
-                    BeeZsoft aplikacija omogućava pčelarima jednostavno vođenje dnevnika dnevnih i mjesečnih aktivnosti, kao i o detaljima za svaku pojedinačnu košnicu. Mogućnost, praćenja troškova i dobiti olakšava pčelaru da efikasno procijeni isplativost svake košnice/društva i da unaprijed predvidi aktivnosti u poboljšanju omjera.
+                    Kontakt:
                 </p>
                 
             </div>
