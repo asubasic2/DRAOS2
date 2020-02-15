@@ -76,6 +76,42 @@ render(){
                                             }
                                         }) }}/> </td>
                         </tr>
+                        <tr>
+                            <th  style = {{textAlign: 'right'}}>Broj zvjezdica: </th>
+                            <td><Form.Control type="number" value = {this.state.ponuda.zvjezdica} placeholder = {this.state.ponuda.zvjezdica} onChange={(e)=>{
+                                        this.setState({ 
+                                            ponuda: { 
+                                                zvjezdica: e.target.value
+                                            }
+                                        }) }}/> </td>
+                        </tr>
+                        <tr>
+                            <th  style = {{textAlign: 'right'}}>Broj soba: </th>
+                            <td><Form.Control type="number" value = {this.state.ponuda.soba} placeholder = {this.state.ponuda.soba} onChange={(e)=>{
+                                        this.setState({ 
+                                            ponuda: { 
+                                                soba: e.target.value
+                                            }
+                                        }) }}/> </td>
+                        </tr>
+                        <tr>
+                            <th  style = {{textAlign: 'right'}}>Cijena: </th>
+                            <td><Form.Control type="text" value = {this.state.ponuda.cijena} placeholder = {this.state.ponuda.cijena} onChange={(e)=>{
+                                        this.setState({ 
+                                            ponuda: { 
+                                                cijena: e.target.value
+                                            }
+                                        }) }}/> </td>
+                        </tr>
+                        <tr>
+                            <th  style = {{textAlign: 'right'}}>O hotelu: </th>
+                            <td><Form.Control as="textarea" rows="3" value = {this.state.ponuda.opis} placeholder = {this.state.ponuda.opis} onChange={(e)=>{
+                                        this.setState({ 
+                                            ponuda: { 
+                                                opis: e.target.value
+                                            }
+                                        }) }}/> </td>
+                        </tr>
                             <th></th>
                             <th><Nav.Link href = "/urediPonude" ><button className="submit"> Ažuriraj </button> </Nav.Link></th>
                     </tbody>

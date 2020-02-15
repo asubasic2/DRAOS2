@@ -29,6 +29,7 @@ render(){
                     <td style = {{textAlign: 'center'}}>{up.mjesto}</td>
                     <td style = {{textAlign: 'center'}}>{up.drzava}</td>
                     <td><Nav.Link href = "/detaljiPonude" > <button className="submit" onClick = {()=>{localStorage.setItem("idIspo", up.id)}}> Edit </button> </Nav.Link></td>
+                    <td><Nav.Link href = "/detaljiHotel" > <button className="submit" onClick = {()=>{localStorage.setItem("idIspo1", up.id)}}> Info </button> </Nav.Link></td>
                 </tr>
         
         );
@@ -57,6 +58,7 @@ render(){
                             <th style = {{textAlign: 'center'}}>MJESTO</th>
                             <th style = {{textAlign: 'center'}}>DRŽAVA</th>
                             <th style = {{textAlign: 'center'}}>POSTAVKE</th>
+                            <th style = {{textAlign: 'center'}}>DODATNO</th>
                         </tr>
                     <tbody>
                         {svePonude}

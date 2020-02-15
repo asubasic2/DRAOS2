@@ -4,7 +4,7 @@ import LoginPage from './components/LoginPage/LoginPage';
 import HomePage from './components/HomePage/HomePage';
 import PrijavaPage from './components/PrijavaPage/PrijavaPage';
 import AdminPage from './components/ZaposlenikPages/UrediPonude';
-import AdminPage1 from './components/ZaposlenikPages/Dodajkorisnika';
+import AdminPage1 from './components/ZaposlenikPages/Klijenti';
 import UserHomePage from './components/KorisnikPages/UserHomePage';
 import Profil from './components/KorisnikPages/Profil'
 import Pocetna from './components/HomePage/Pocetna'
@@ -14,12 +14,16 @@ import DetaljiUposlenik from './components/ZaposlenikPages/DetaljiUposlenik'
 import DodajUposlenika from './components/ZaposlenikPages/DodajUposlenika'
 import DetaljiPonude from './components/ZaposlenikPages/DetaljiPonude'
 import DodajPonudu from './components/ZaposlenikPages/DodajPonudu'
+import sviHoteli from './components/HomePage/Hoteli'
 import Ljetovanje from './components/HomePage/Ljeto'
 import Zimovanje from './components/HomePage/Zima'
 import Nova from './components/HomePage/Nova'
 import Putovanja from './components/HomePage/Put'
-
-
+import Pocetnaeng from './components/Eng/HomePage/PocetnaEng'
+import ljetoeng from './components/Eng/HomePage/LjetoEng'
+import detaljiklijent from './components/ZaposlenikPages/DetaljiKlijent'
+import listaZelja from './components/KorisnikPages/ListaZelja'
+import detaljiHotel from './components/KorisnikPages/DetaljiHotel'
 import './App.css';
 
 
@@ -28,7 +32,6 @@ function App() {
   return (
     <BrowserRouter>
         <Switch>
-        
           <Route exact path="/" component={HomePage} />
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/prijava" component={PrijavaPage} />
@@ -47,6 +50,12 @@ function App() {
           <Route exact path="/zimovanje" component={Zimovanje} />
           <Route exact path="/nova" component={Nova} />
           <Route exact path="/putovanje" component={Putovanja} />
+          <Route exact path="/pocetnaeng" component={Pocetnaeng} />
+          <Route exact path="/ljetoeng" component={ljetoeng} />
+          <Route exact path="/detaljiklijent" component={detaljiklijent} />
+          <Route exact path="/listaZelja" component={listaZelja} />
+          <Route exact path="/detaljiHotel" component={detaljiHotel} />
+          <Route exact path="/sviHoteli" component={sviHoteli} />
         </Switch>
       </BrowserRouter>
       

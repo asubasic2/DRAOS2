@@ -19,7 +19,8 @@ class PocetnaUposlenik extends Component {
 componentDidMount(){
     this.setState({
         ponude: JSON.parse(localStorage.getItem("ponude")),
-        uposlenici:  JSON.parse(localStorage.getItem("uposlenik"))
+        uposlenici:  JSON.parse(localStorage.getItem("uposlenik")),
+        klijenti: JSON.parse(localStorage.getItem("klijent"))
     })
         
 }
@@ -39,7 +40,7 @@ render(){
         
             <div className="body">
                 <h3 className="naslov">Dobrodošli</h3>
-                <Container style = {{marginBottom: '2em'}}>
+                <Container style = {{marginBottom: '2em', marginTop: '2em'}}>
                 <Row>
                     <Col>
                     <Table striped bordered hover>
@@ -53,7 +54,11 @@ render(){
                             <td  style = {{textAlign: 'center'}}>{this.state.ponude.length}</td>
                         </tr>
                         <tr>
-                            <th  style = {{textAlign: 'center'}}>Broj X: </th>
+                            <th  style = {{textAlign: 'center'}}>Broj klijenata: </th>
+                            <td  style = {{textAlign: 'center'}}>{this.state.klijenti.length}</td>
+                        </tr>
+                        <tr>
+                            <th  style = {{textAlign: 'center'}}>Broj rezervacija: </th>
                             <td  style = {{textAlign: 'center'}}>X</td>
                         </tr>
                      </tbody>

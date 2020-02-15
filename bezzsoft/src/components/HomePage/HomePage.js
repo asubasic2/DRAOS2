@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../NavBar/NavBar';
 import Header from '../Header/Header'
 import { Nav } from 'react-bootstrap'
-
+import {Redirect} from 'react-router-dom';
 class HomePage extends Component {
 
 render(){
@@ -12,8 +12,9 @@ render(){
     localStorage.setItem('prijavljen',false);
     localStorage.setItem('role','neprijavljen');
     return(
+        
         <div className="mainpage">
-            
+            <Redirect to="/pocetna"></Redirect>
                    
             <Header></Header>
         

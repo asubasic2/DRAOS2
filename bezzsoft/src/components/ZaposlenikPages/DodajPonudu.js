@@ -12,14 +12,22 @@ constructor(props){
         prvi: "",
         drugi: "",
         treci:"",
+        zvjezdica: 0,
+        soba: 0,
+        opis: "",
+        cijena: "",
         svePonude: [],
         redirect: false,
         spremi: function(jedan, dva, tri){
             var nijeValjda = this.svePonude;
-            var ponuda = { id: nijeValjda.lenght + 1,
+            var ponuda = { id: nijeValjda.length + 1,
                 hotel: this.prvi,
-            mjesto: this.drugi,
-            drzava: this.treci
+                mjesto: this.drugi,
+                drzava: this.treci,
+                zvjezdica: this.zvjezdica,
+                soba: this.soba,
+                opis: this.opis,
+                cijena: this.cijena
             }
             nijeValjda.push(ponuda)
             localStorage.setItem("ponude", JSON.stringify(nijeValjda))
@@ -72,18 +80,58 @@ render(){
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'right'}}>Mjesto: </th>
-                            <td><Form.Control required type="text"   onChange={(e)=>{
+                            <td><Form.Control required as="select" isInvalid = {this.state.radStatus} onChange={(val)=>this.setState({drugi: val.target.value})}>
+                                <option value=""></option>
+                                <option value="Maldivi">Maldivi</option>
+                                <option value="Kapadokija">Kapadokija</option>
+                                <option value="Las Vegas">Las Vegas</option>
+                                <option value="Marakeš">Marakeš</option>
+                                </Form.Control>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th  style = {{textAlign: 'right'}}>Država: </th>
+                            <td><Form.Control required as="select" isInvalid = {this.state.radStatus} onChange={(val)=>this.setState({treci: val.target.value})}>
+                                <option value=""></option>
+                                <option value="Maldivi">Maldivi</option>
+                                <option value="Turska">Turska</option>
+                                <option value="SAD">SAD</option>
+                                <option value="Maroko">Maroko</option>
+                                </Form.Control></td>
+
+                        </tr>
+                        <tr>
+                            <th  style = {{textAlign: 'right'}}>Broj zvjezdica: </th>
+                            <td><Form.Control required type="number" min = {1} max = {6}  onChange={(e)=>{
                                         this.setState({ 
-                                            drugi: e.target.value
+                                            zvjezdica: e.target.value
                                             
                                         }) }}/> </td>
 
                         </tr>
                         <tr>
-                            <th  style = {{textAlign: 'right'}}>Drzava: </th>
-                            <td><Form.Control required type="text"  onChange={(e)=>{
+                            <th  style = {{textAlign: 'right'}}>Broj soba: </th>
+                            <td><Form.Control required type="number" min = {1} onChange={(e)=>{
                                         this.setState({ 
-                                            treci: e.target.value
+                                            soba: e.target.value
+                                            
+                                        }) }}/> </td>
+
+                        </tr>
+                        <tr>
+                            <th  style = {{textAlign: 'right'}}>Cijena: </th>
+                            <td><Form.Control required type="text" onChange={(e)=>{
+                                        this.setState({ 
+                                            cijena: e.target.value
+                                            
+                                        }) }}/> </td>
+
+                        </tr>
+                        <tr>
+                            <th  style = {{textAlign: 'right'}}>O hotelu: </th>
+                            <td><Form.Control required as="textarea" rows="3" onChange={(e)=>{
+                                        this.setState({ 
+                                            opis: e.target.value
                                             
                                         }) }}/> </td>
 

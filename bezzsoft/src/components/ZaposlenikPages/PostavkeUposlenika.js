@@ -24,6 +24,10 @@ class PostavkeUposlenika extends Component {
     }
 
     pretraga(){
+        this.setState({
+                osvjezi: false,
+                uposlenik: JSON.parse(localStorage.getItem('uposlenik'))
+            })
         if(this.state.pretraga == "") {
             this.setState({
                 osvjezi: false,
@@ -31,7 +35,7 @@ class PostavkeUposlenika extends Component {
             })
             return ;
         }
-        var u = this.state.uposlenik
+        var u = JSON.parse(localStorage.getItem('uposlenik'))
         var u1 = []
         for(var i=0; i<u.length; i++){
             if(u[i].ImePrezime.includes(this.state.pretraga)){
@@ -75,7 +79,7 @@ render(){
                 <Table striped bordered hover >
                     <tr >
                         <td style={{width: '30%'}}>
-                            <Form.Control type="text" value = {this.state.pretraga} placeholder = {"Pretraži po imenu..."} onChange={(e)=>{this.setState({ pretraga: e.target.value })}}/>
+                            <Form.Control type="text" value = {this.state.pretraga} placeholder = {"Pretraži po imenu i prezimenu..."} onChange={(e)=>{this.setState({ pretraga: e.target.value })}}/>
                         </td>
                         <td style={{width: '0.5%'}}> <Button variant="primary" onClick = {()=>{this.pretraga()}}>Pretraga</Button></td>
     
