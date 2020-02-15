@@ -90,7 +90,7 @@ render(){
 
                 >
                 <Marker
-                    position = {{lat: 43.854070, lng: 18.390200}}
+                    position = {{lat: 43.85666667, lng: 18.39833333}}
                     name = {"ANA"}
                 /> 
     
