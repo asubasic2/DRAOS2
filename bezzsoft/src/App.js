@@ -14,12 +14,14 @@ import DetaljiUposlenik from './components/ZaposlenikPages/DetaljiUposlenik'
 import DodajUposlenika from './components/ZaposlenikPages/DodajUposlenika'
 import DetaljiPonude from './components/ZaposlenikPages/DetaljiPonude'
 import DodajPonudu from './components/ZaposlenikPages/DodajPonudu'
+import sviHoteli from './components/HomePage/Hoteli'
 import Ljetovanje from './components/HomePage/Ljeto'
 import Zimovanje from './components/HomePage/Zima'
 import Pocetnaeng from './components/Eng/HomePage/PocetnaEng'
 import ljetoeng from './components/Eng/HomePage/LjetoEng'
 import detaljiklijent from './components/ZaposlenikPages/DetaljiKlijent'
 import listaZelja from './components/KorisnikPages/ListaZelja'
+import detaljiHotel from './components/KorisnikPages/DetaljiHotel'
 import './App.css';
 
 
@@ -49,6 +51,8 @@ function App() {
           <Route exact path="/ljetoeng" component={ljetoeng} />
           <Route exact path="/detaljiklijent" component={detaljiklijent} />
           <Route exact path="/listaZelja" component={listaZelja} />
+          <Route exact path="/detaljiHotel" component={detaljiHotel} />
+          <Route exact path="/sviHoteli" component={sviHoteli} />
         </Switch>
       </BrowserRouter>
       
