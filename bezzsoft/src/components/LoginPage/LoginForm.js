@@ -71,7 +71,7 @@ class LoginForm extends Component {
       VrstaRada: "Šalter",
       Email: "alocic1@etf.unsa.ba",
       Zaposlen: "01.02.2019.",
-      Plata: "800 KM"
+      Plata: "800"
     }
     var u2 = {
       id: 2,
@@ -79,7 +79,7 @@ class LoginForm extends Component {
       VrstaRada: "Šalter",
       Email: "nmijatovic@etf.unsa.ba",
       Zaposlen: "01.02.2019.",
-      Plata: "800 KM"
+      Plata: '800'
     }
     var u3 = { 
       id: 3,
@@ -87,7 +87,7 @@ class LoginForm extends Component {
       VrstaRada: "Vodič",
       Email: "asubasic2@etf.unsa.ba",
       Zaposlen: "01.02.2019.",
-      Plata: "1000 KM"
+      Plata: '1000'
     }
     var u4 = {
       id: 4,
@@ -95,7 +95,7 @@ class LoginForm extends Component {
       VrstaRada: "Šalter",
       Email: "mmujic@etf.unsa.ba",
       Zaposlen: "01.02.2019.",
-      Plata: "800 KM"
+      Plata: '800'
     }
     var u5 = {
       id: 5,
@@ -103,7 +103,7 @@ class LoginForm extends Component {
       VrstaRada: "Vodič",
       Email: "hpolovina@etf.unsa.ba",
       Zaposlen: "01.02.2019.",
-      Plata: "1000 KM"
+      Plata: '1000'
     }
     uposlenik.push(u1)
     uposlenik.push(u2)

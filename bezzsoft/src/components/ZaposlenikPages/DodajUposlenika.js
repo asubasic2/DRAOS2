@@ -35,7 +35,7 @@ dodajUposlenika(){
     var greska = ""
     const regexEmail = /(^[a-zA-Z0-9]+@[a-zA-Z]+.com$|^[a-zA-Z0-9]+@etf.unsa.ba$)/g
     const regexdatum = /^\d{2}.\d{2}.\d{4}.$/g
-    const regexplata = /^\d+ KM$/g
+    const regexplata = /^\d+$/g
     this.setState({
         radStatus: false,
         plataStatus: false,
@@ -52,7 +52,7 @@ dodajUposlenika(){
         return ;
     }
     if(this.state.VrstaRada.localeCompare("Šalter") !== 0 && this.state.VrstaRada.localeCompare("Vodič") !== 0){
-        greska = "Neispravno radno mjesto! Unesite Vodič ili Šalter.\n"
+        greska = "Neispravno radno mjesto. Unesite Vodič ili Šalter.\n"
         this.setState({
             radStatus: true
         })
@@ -60,7 +60,7 @@ dodajUposlenika(){
         return ;
     }
     if(!regexEmail.test(this.state.Email)){
-        greska = "Neispravno unešen E-mail! Mora biti formata test@test.com.\n"
+        greska = "Neispravno unešen E-mail. Mora biti formata test@test.com.\n"
         this.setState({
             emailStatus: true
         })
@@ -68,7 +68,7 @@ dodajUposlenika(){
         return ;
     }
     if(!regexdatum.test(this.state.Zaposlen)){
-        greska = "Neispravan format datuma! Unesite datum u formatu dd.mm.yyyy."
+        greska = "Neispravan format datuma. Unesite datum u formatu dd.mm.yyyy."
         this.setState({
             zaposlenStatus: true
         })
@@ -76,7 +76,7 @@ dodajUposlenika(){
         return ;
     }
     if(!regexplata.test(this.state.Plata)){
-        greska = "Neispravan format unosa plate! Unesite platu u formatu: \"xxxx KM\""
+        greska = "Neispravan format unosa plate. Plata mora biti broj"
         this.setState({
             plataStatus: true
         })
@@ -157,7 +157,7 @@ render(){
                                         }) }}/> </td>
                         </tr>
                         <tr>
-                            <th  style = {{textAlign: 'right'}}>Plata: </th>
+                            <th  style = {{textAlign: 'right'}}>Plata (KM): </th>
                             <td><Form.Control isInvalid = {this.state.plataStatus} required type="text" onChange={(e)=>{
                                         this.setState({ 
                                                 Plata: e.target.value

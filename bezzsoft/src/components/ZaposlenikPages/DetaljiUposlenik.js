@@ -41,7 +41,7 @@ azurirajUposlenika(){
     var greska = ""
     const regexEmail = /(^[a-zA-Z0-9]+@[a-zA-Z]+.com$|^[a-zA-Z0-9]+@etf.unsa.ba$)/g
     const regexdatum = /^\d{2}.\d{2}.\d{4}.$/g
-    const regexplata = /^\d+ KM$/g
+    const regexplata = /^\d+$/g
     this.setState({
         radStatus: false,
         plataStatus: false,
@@ -73,7 +73,7 @@ azurirajUposlenika(){
         return ;
     }
     if(!regexplata.test(this.state.Plata) && this.state.Plata !== ""){
-        greska = "Neispravan format unosa plate! Unesite platu u formatu: \"xxxx KM\""
+        greska = "Neispravan format unosa plate! Plata mora biti broj."
         this.setState({
             plataStatus: true
         })
@@ -180,7 +180,7 @@ render(){
                                         }) }}/> </td>
                         </tr>
                         <tr>
-                            <th  style = {{textAlign: 'right'}}>Plata: </th>
+                            <th  style = {{textAlign: 'right'}}>Plata (KM): </th>
                             <td><Form.Control type="text" isInvalid = {this.state.plataStatus} value = {this.state.Plata} placeholder = {this.state.uposlenik.Plata} onChange={(e)=>{
                                         this.setState({ 
                                                 Plata: e.target.value

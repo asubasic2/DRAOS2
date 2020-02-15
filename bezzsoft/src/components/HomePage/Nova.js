@@ -8,7 +8,7 @@ import venecijaSlika from './venecija.jpg'
 import rimSlika from './rim.jpg'
 import dubrovnikSlika from './dubrovnik.jpg'
 
-class HomePage extends Component {
+class Nova extends Component {
 
 render(){ 
     if(localStorage.getItem('role') == 'user'){
@@ -133,4 +133,4 @@ render(){
 
 }
 
-export default HomePage;
+export default Nova;

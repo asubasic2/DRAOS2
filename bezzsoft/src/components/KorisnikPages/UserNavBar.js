@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Navbar,Nav,Image} from 'react-bootstrap';
 import bih from './bih.png'
 import eng from './eng.png'
+import hlp from './help.png'
 
 class UserNavBar extends Component {
 
@@ -21,6 +22,7 @@ render(){
         <Nav.Link href="/listaZelja"><p className="textlink">Lista želja</p> </Nav.Link>
         <Nav.Link href="/kontakt"><p className="textlink">Kontakt</p></Nav.Link>
         <Nav.Link href="/login"><p className="textlink">Logout</p> </Nav.Link>
+        <Nav.Link href="/pomoc"><Image src={hlp} style={{width:'3em', height:'3em', padding:'none'}} roundedCircle/></Nav.Link>
         <Nav.Link href="/pocetna"><Image src={bih} style={{width:'3em', height:'2em', padding:'none'}} roundedCircle/></Nav.Link>
         <Nav.Link href="/pocetnaeng"><Image src={eng} style={{width:'3em', height:'2em', padding:'none'}} roundedCircle/></Nav.Link>
       </Navbar.Collapse>

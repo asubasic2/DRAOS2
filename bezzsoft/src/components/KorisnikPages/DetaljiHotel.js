@@ -56,7 +56,7 @@ render(){
                 
                 
                             <Card style={{ padding:'2em'}}>
-                                <Nav.Link href = "/urediPonude" ><button className="submit"> Nazad </button> </Nav.Link>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"> Nazad </button> </Nav.Link>
                                 <Card.Img variant="top" style={{height: '30em', width: '45em', alignSelf: 'center'}} src={hotelSlika} />
                                 <Card.Body>
                                     
@@ -100,7 +100,7 @@ render(){
                 
                 
                             <Card style={{ padding:'2em'}}>
-                                <Nav.Link href = "/urediPonude" ><button className="submit"> Nazad </button> </Nav.Link>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"> Nazad </button> </Nav.Link>
                                 <Card.Img variant="top" style={{height: '30em', width: '45em', alignSelf: 'center'}} src={hotelSlika} />
                                 <Card.Body>
                                     
