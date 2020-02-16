@@ -66,6 +66,7 @@ class LoginForm extends Component {
       if (korisnici[i].username === this.state.username) {
         if (korisnici[i].password === this.state.password) {
           localStorage.setItem('role', 'user')
+          localStorage.setItem("idkorisnik",korisnici[i].id.toString())
           global.role = 'user'
           this.setState(
             () => ({
@@ -241,6 +242,32 @@ class LoginForm extends Component {
     localStorage.setItem("klijent", JSON.stringify(klijenti))
     var sveZelje = []
     localStorage.setItem("meso", JSON.stringify(sveZelje))
+    var rezervacije = []
+    var r1 = {
+      idkorisnik: 3,
+      datumDolaska: "03.03.2020.",
+      datumOdlaska: "07.03.2020.",
+      brojKreveta: 2,
+      Vodic: 0,
+      prevoz: "Autobus",
+      putnoOsiguranje: 1,
+      djece: 1,
+      cijena: 550
+    }
+    var r2 = {
+      idkorisnik: 3,
+      datumDolaska: "03.03.2020.",
+      datumOdlaska: "09.03.2020.",
+      brojKreveta: 1,
+      Vodic: 1,
+      prevoz: "Avion",
+      putnoOsiguranje: 1,
+      djece: 0,
+      cijena: 1050
+    }
+    rezervacije.push(r1)
+    rezervacije.push(r2)
+    localStorage.setItem("rezervacije", JSON.stringify(rezervacije))
   }
 
 

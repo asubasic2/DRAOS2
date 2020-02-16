@@ -117,6 +117,7 @@ render(){
                                     />
                                     </Card.Text>
                                     <button className="submit" onClick={()=>{this.dodajZelju(this.state.ponuda)}}>Dodaj u želje</button>
+                                    <Nav.Link href = "/rezervisi" ><button className="submit"> Rezerviši hotel </button> </Nav.Link>
                                 </Card.Body>
                             </Card>
                         </CardDeck>
