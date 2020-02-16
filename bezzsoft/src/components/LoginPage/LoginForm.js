@@ -34,9 +34,11 @@ class LoginForm extends Component {
       // console.log("Clicked")
       document.getElementById("userfield").focus()
     }
-  }
-
-
+    if (clickedId == "Enter") {
+      // console.log("Clicked")
+      document.getElementById("submitbutton").click()
+      }
+  }  
 
 
   onLogin() {
@@ -311,7 +313,7 @@ class LoginForm extends Component {
 
 
         </Form>
-        <button className="submit" onClick={this.onLogin} >
+        <button className="submit" id='submitbutton' onClick={this.onLogin} >
           Prijavi se
       </button>
       </div>
