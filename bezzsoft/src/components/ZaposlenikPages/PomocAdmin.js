@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../NavBar/NavBar';
-import UserNav from '../KorisnikPages/UserNavBar'
+import UserNav from './AdminNavBar'
 import Header from '../Header/Header'
 import { Nav, Card, Button, CardDeck, CardColumns } from 'react-bootstrap'
 import {Redirect} from 'react-router-dom';
