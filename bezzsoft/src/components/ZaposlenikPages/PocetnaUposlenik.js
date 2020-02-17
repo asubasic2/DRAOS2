@@ -20,7 +20,8 @@ componentDidMount(){
     this.setState({
         ponude: JSON.parse(localStorage.getItem("ponude")),
         uposlenici:  JSON.parse(localStorage.getItem("uposlenik")),
-        klijenti: JSON.parse(localStorage.getItem("klijent"))
+        klijenti: JSON.parse(localStorage.getItem("klijent")),
+        rezervacije: JSON.parse(localStorage.getItem("rezervacije"))
     })
         
 }
@@ -39,7 +40,7 @@ render(){
            
         
             <div className="body">
-                <h3 className="naslov">Dobrodošli</h3>
+                <h3 className="naslov" style={{textAlign: "center"}}>Dobrodošli</h3>
                 <Container style = {{marginBottom: '2em', marginTop: '2em'}}>
                 <Row>
                     <Col>
@@ -59,7 +60,7 @@ render(){
                         </tr>
                         <tr>
                             <th  style = {{textAlign: 'center'}}>Broj rezervacija: </th>
-                            <td  style = {{textAlign: 'center'}}>X</td>
+                            <td  style = {{textAlign: 'center'}}>{this.state.rezervacije.length}</td>
                         </tr>
                      </tbody>
                     </Table>

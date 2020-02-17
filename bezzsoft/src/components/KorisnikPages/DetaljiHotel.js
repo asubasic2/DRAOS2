@@ -38,52 +38,7 @@ componentDidMount(){
 
 
 render(){
-    if(localStorage.getItem('role')!='user'){
-  
-        return(
-            <div className="mainpage">
-                
-                <NavBar></NavBar>
-            
-                <Header></Header>
-            
-            
-                <div className="body">
-                    
-                <CardDeck>
-                
-
-                
-                
-                            <Card style={{ padding:'2em'}}>
-                                <Nav.Link href = "/sviHoteli" ><button className="submit"> Nazad </button> </Nav.Link>
-                                <Card.Img variant="top" style={{height: '30em', width: '45em', alignSelf: 'center'}} src={hotelSlika} />
-                                <Card.Body>
-                                    
-                                    <h2 style={{textAlign: 'center'}}>{this.state.ponuda.hotel}</h2>
-                                    <Card.Text>
-                                        {this.state.ponuda.opis}
-                                    </Card.Text>
-                                    <Card.Text>
-                                        Ocjena: <StarRatings
-                                        rating={this.state.ponuda.zvjezdica}
-                                        starRatedColor="red"
-                                        starDimension="40px"
-                                        starSpacing="15px"
-                                    />
-                                    </Card.Text>
-                                    
-                                </Card.Body>
-                            </Card>
-                        </CardDeck>
-                
-                </div>
-            </div>
-        
-        
-        );
-    }
-    else{
+    if(localStorage.getItem('role') === 'user'){
         return(
             <div className="mainpage">
                 
@@ -118,6 +73,95 @@ render(){
                                     </Card.Text>
                                     <button className="submit" onClick={()=>{this.dodajZelju(this.state.ponuda)}}>Dodaj u želje</button>
                                     <Nav.Link href = "/rezervisi" ><button className="submit"> Rezerviši hotel </button> </Nav.Link>
+                                </Card.Body>
+                            </Card>
+                        </CardDeck>
+                
+                </div>
+            </div>
+        
+        
+        );
+    }
+    else if(localStorage.getItem('role') === 'admin'){
+        return(
+            <div className="mainpage">
+                
+                <AdminNavBar></AdminNavBar>
+            
+                <Header></Header>
+            
+            
+                <div className="body">
+                    
+                <CardDeck>
+                
+
+                
+                
+                            <Card style={{ padding:'2em'}}>
+                                <Nav.Link href = "/urediponude" ><button className="submit"> Nazad </button> </Nav.Link>
+                                <Card.Img variant="top" style={{height: '30em', width: '45em', alignSelf: 'center'}} src={hotelSlika} />
+                                <Card.Body>
+                                    
+                                    <h2 style={{textAlign: 'center'}}>{this.state.ponuda.hotel}</h2>
+                                    <Card.Text>
+                                        {this.state.ponuda.opis}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Ocjena: <StarRatings
+                                        rating={this.state.ponuda.zvjezdica}
+                                        starRatedColor="red"
+                                        starDimension="40px"
+                                        starSpacing="15px"
+                                    />
+                                    </Card.Text>
+                                    
+                                </Card.Body>
+                            </Card>
+                        </CardDeck>
+                
+                </div>
+            </div>
+        
+        
+        );
+    }
+    else{
+  
+        return(
+            <div className="mainpage">
+                
+                <NavBar></NavBar>
+            
+                <Header></Header>
+            
+            
+                <div className="body">
+                    
+                <CardDeck>
+                
+
+                
+                
+                            <Card style={{ padding:'2em'}}>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"> Nazad </button> </Nav.Link>
+                                <Card.Img variant="top" style={{height: '30em', width: '45em', alignSelf: 'center'}} src={hotelSlika} />
+                                <Card.Body>
+                                    
+                                    <h2 style={{textAlign: 'center'}}>{this.state.ponuda.hotel}</h2>
+                                    <Card.Text>
+                                        {this.state.ponuda.opis}
+                                    </Card.Text>
+                                    <Card.Text>
+                                        Ocjena: <StarRatings
+                                        rating={this.state.ponuda.zvjezdica}
+                                        starRatedColor="red"
+                                        starDimension="40px"
+                                        starSpacing="15px"
+                                    />
+                                    </Card.Text>
+                                    
                                 </Card.Body>
                             </Card>
                         </CardDeck>

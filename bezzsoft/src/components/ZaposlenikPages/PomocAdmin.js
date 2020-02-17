@@ -30,7 +30,7 @@ render(){
                         U opciji postavke uposlenika korisnik može da doda novog uposlenika, ima pregled liste zaposlenih i može izvršiti pretraživanje  uposlenika. <br></br>
                         Kod dodavanja novog uposlenika zaposlenik ga dodaje tako što može izvršiti prelazak između textbox-ova pomoću tipki za navigaciju(prilikom prelaska sa radnog mjesta na E-mail moramo pritisnuti tab, pa onda navigacijsku tipku).<br></br>
                         U postavkama klijenata postoji lista klijenata sa svojim osnovnim podacima, klijenete možemo da dodajemo, editujemo i da pretražujemo.<br></br>
-                        Kod postavke klijenata nije implementiran prelazak između textbox-ova pomoću navigacijskih tipki.<br></br>
+                        <br></br>
                     </p>
                     
                 </div>

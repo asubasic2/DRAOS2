@@ -114,7 +114,8 @@ class DetaljiUposlenik extends Component {
             Vodic: this.state.Vodic,
             prevoz: this.state.prevoz,
             putnoOsiguranje: this.state.putnoOsiguranje,
-            cijena: this.state.cijena
+            cijena: this.state.cijena,
+            djece: this.state.djece
         }
         rezervacije.push(r)
         localStorage.setItem("rezervacije", JSON.stringify(rezervacije))
@@ -228,20 +229,19 @@ class DetaljiUposlenik extends Component {
                                             value={this.state.Vodic}
                                             onChange={(val) => {
                                                
-                                               if (val.target.value) {
+                                               if (val.target.value === "true") {
                                                     this.setState({
                                                         Vodic: val.target.value,
                                                         cijena: this.state.cijena + 50
                                                     })
                                                 }
-                                                else if (!val.target.value && this.state.Vodic) {
+                                                else if (val.target.value === "false" && this.state.Vodic === "true") {
                                                     this.setState({
                                                         Vodic: false,
                                                         cijena: this.state.cijena - 50
                                                     })
                                                 }
                                             }}>
-                                                <option value=""></option>
                                                 <option value={true}>Da</option>
                                                 <option value={false}>Ne</option>
                                             </Form.Control></td>
@@ -308,13 +308,13 @@ class DetaljiUposlenik extends Component {
                                             value={this.state.putnoOsiguranje}
                                             onChange={(val) => {
                                                 
-                                                if (val.target.value) {
+                                                if (val.target.value === "true") {
                                                     this.setState({
                                                         putnoOsiguranje: val.target.value,
                                                         cijena: this.state.cijena + 50,
                                                     })
                                                 }
-                                                else if (!val.target.value && this.state.putnoOsiguranje) {
+                                                else if (val.target.value === "false" && this.state.putnoOsiguranje === "true") {
                                                     this.setState({
                                                         putnoOsiguranje: false,
                                                         cijena: this.state.cijena - 50,

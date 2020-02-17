@@ -21,6 +21,7 @@ render(){
             <Header></Header>
         
             <div className="body">
+            <h2 className="naslov"  style = {{textAlign: 'center', padding: '1em'}}>Welcome to the ANA Travel Agency web site!</h2>
                     <CardDeck>
                         <Card style={{ padding:'2em'}}>
                             <Card.Img variant="top" style={{height: '30em', width: '45em', alignSelf: 'center'}} src={ljetoslika} />
@@ -80,6 +81,7 @@ render(){
             <Header></Header>
         
             <div className="body">
+            <h2 className="naslov"  style = {{textAlign: 'center', padding: '1em'}}>Welcome to the ANA Travel Agency web site!</h2>
                     <CardDeck>
                         <Card style={{ padding:'2em'}}>
                             <Card.Img variant="top" style={{height: '30em', width: '45em', alignSelf: 'center'}} src={ljetoslika} />
