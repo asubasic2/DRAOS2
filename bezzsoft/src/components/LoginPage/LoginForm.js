@@ -254,7 +254,8 @@ class LoginForm extends Component {
       prevoz: "Autobus",
       putnoOsiguranje: 1,
       djece: 1,
-      cijena: 550
+      cijena: 550,
+      mjesto: "Kapadokija"
     }
     var r2 = {
       idkorisnik: 3,
@@ -265,7 +266,8 @@ class LoginForm extends Component {
       prevoz: "Avion",
       putnoOsiguranje: 1,
       djece: 0,
-      cijena: 1050
+      cijena: 1050,
+      mjesto: "Las Vegas"
     }
     rezervacije.push(r1)
     rezervacije.push(r2)
@@ -292,7 +294,7 @@ class LoginForm extends Component {
         <Form >
           <Form.Group>
 
-            <Form.Control type="username" placeholder="Korisničko ime" id='userfield' value={this.state.username} onChange={(e) => {
+            <Form.Control type="username" autoFocus placeholder="Korisničko ime" id='userfield' value={this.state.username} onChange={(e) => {
               this.setState({
                 username: e.target.value
               })

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavBar from '../ZaposlenikPages/AdminNavBar';
+import UserNav from './UserNavBar'
 import Header from '../Header/Header'
 import { Container, Row, Col, Table, Nav, Form } from 'react-bootstrap'
 import { Redirect } from 'react-router-dom';
@@ -140,7 +140,7 @@ class DetaljiUposlenik extends Component {
         return (
             <div className="mainpage">
 
-                <NavBar></NavBar>
+                <UserNav></UserNav>
 
                 <Header></Header>
 

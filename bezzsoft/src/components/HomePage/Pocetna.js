@@ -82,7 +82,7 @@ render(){
 
             <div className="body">
             <h2 className="naslov"  style = {{textAlign: 'center', padding: '1em'}}>Dobrodošli na stranicu turističke agencije ANA!</h2>
-                    <CardDeck>
+            <CardDeck>
                         <Card style={{ padding:'2em'}}>
                             <Card.Img variant="top" style={{height: '30em', width: '45em', alignSelf: 'center'}} src={ljetoslika} />
                             <Card.Body>
@@ -90,7 +90,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <Nav.Link href = "/ljetovanje"><button href="/pocetnauposlenik" className="submit">Pogledaj ponude!</button></Nav.Link> 
+                                <Nav.Link href = "/ljetovanje" ><button className="submit">Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                         </Card>
                         <Card style={{ padding:'2em'}}>
@@ -100,7 +100,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <button className="submit">Pogledaj ponude!</button>
+                                <Nav.Link href = "/zimovanje" ><button className="submit">Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                             </Card>
                     </CardDeck>
@@ -113,7 +113,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <button className="submit">Pogledaj ponude!</button>
+                                <Nav.Link href = "/novagodina" ><button className="submit">Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                         </Card>
                         <Card style={{ padding:'2em'}}>
@@ -123,7 +123,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <button className="submit">Pogledaj ponude!</button>
+                                <Nav.Link href = "/putovanja" ><button className="submit">Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                         </Card>
                     </CardDeck>

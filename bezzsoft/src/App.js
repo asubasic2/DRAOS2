@@ -23,6 +23,7 @@ import Pocetnaeng from './components/Eng/HomePage/PocetnaEng'
 import ljetoeng from './components/Eng/HomePage/LjetoEng'
 import detaljiklijent from './components/ZaposlenikPages/DetaljiKlijent'
 import listaZelja from './components/KorisnikPages/ListaZelja'
+import rezervacije from './components/KorisnikPages/Rezervacije'
 import detaljiHotel from './components/KorisnikPages/DetaljiHotel'
 import pomoc from './components/HomePage/Pomoc'
 import kontakt from './components/HomePage/Kontakt'
@@ -64,6 +65,7 @@ function App() {
           <Route exact path="/kontakt" component={kontakt} />
           <Route exact path="/pomocadmin" component={PomocAdmin} />
           <Route exact path="/rezervisi" component={rezervisi} />
+          <Route exact path="/rezervacije" component={rezervacije} />
         </Switch>
       </BrowserRouter>
       

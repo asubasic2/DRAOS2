@@ -26,7 +26,7 @@ render(){
                         Kupac kad uđe na stanicu turističke agencije bude pozicioniran na početnu stanicu. <br></br>
                         Kupac može da izabere na početnoj stanici neku destinaciju(nisu raspoređene po kategorijama). <br></br>
                         Kupac može da izabere destinaciju po kategorijama: Ljetovanje, Nova Godina, Zimovanje i Putovanja. <br></br>
-                        Samo je za ljetovanje implementirano "Pogledaj ponude". <br></br>
+                        
                         Nakon što korisnik odabere "Pogledaj ponude" može izvršiti rezervaciju ili staviti u listu želja. <br></br>
                         U meniju korisnik može pronaći opciju "Lista želja", gdje može vidjeti spisak selektovanih destinacija
                         (možemo ih brisati). <br></br>
@@ -46,7 +46,7 @@ render(){
                         U opciji postavke uposlenika korisnik može da doda novog uposlenika, ima pregled liste zaposlenih i može izvršiti pretraživanje  uposlenika. <br></br>
                         Kod dodavanja novog uposlenika zaposlenik ga dodaje tako što može izvršiti prelazak između textbox-ova pomoću tipki za navigaciju(prilikom prelaska sa radnog mjesta na E-mail moramo pritisnuti tab, pa onda navigacijsku tipku).<br></br>
                         U postavkama klijenata postoji lista klijenata sa svojim osnovnim podacima, klijenete možemo da dodajemo, editujemo i da pretražujemo.<br></br>
-                        Kod postavke klijenata nije implementiran prelazak između textbox-ova pomoću navigacijskih tipki.<br></br>
+                        
 
                     </p>
                     
