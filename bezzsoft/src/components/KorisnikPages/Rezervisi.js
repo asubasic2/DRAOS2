@@ -114,8 +114,9 @@ class DetaljiUposlenik extends Component {
             Vodic: this.state.Vodic,
             prevoz: this.state.prevoz,
             putnoOsiguranje: this.state.putnoOsiguranje,
+            djece: this.state.djece,
             cijena: this.state.cijena,
-            djece: this.state.djece
+            mjesto: localStorage.getItem("mjestoRezervacije")
         }
         rezervacije.push(r)
         localStorage.setItem("rezervacije", JSON.stringify(rezervacije))
