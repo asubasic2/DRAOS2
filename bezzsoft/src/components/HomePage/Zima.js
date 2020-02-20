@@ -28,7 +28,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "nema")}}>Pogledaj ponude!</button></Nav.Link>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "Jahorina")}}>Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                         </Card>
                         <Card style={{ padding:'2em'}}>
@@ -38,7 +38,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "nema")}}>Pogledaj ponude!</button></Nav.Link>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "Aspen")}}>Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                             </Card>
                     </CardDeck>
@@ -51,7 +51,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "nema")}}>Pogledaj ponude!</button></Nav.Link>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "Kopaonik")}}>Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                         </Card>
                         <Card style={{ padding:'2em'}}>
@@ -61,7 +61,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "nema")}}>Pogledaj ponude!</button></Nav.Link>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "Šamoni")}}>Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                         </Card>
                     </CardDeck>
@@ -87,7 +87,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "nema")}}>Pogledaj ponude!</button></Nav.Link>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "Jahorina")}}>Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                         </Card>
                         <Card style={{ padding:'2em'}}>
@@ -97,7 +97,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "nema")}}>Pogledaj ponude!</button></Nav.Link>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "Aspen")}}>Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                             </Card>
                     </CardDeck>
@@ -110,7 +110,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "nema")}}>Pogledaj ponude!</button></Nav.Link>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "Kopaonik")}}>Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                         </Card>
                         <Card style={{ padding:'2em'}}>
@@ -120,7 +120,7 @@ render(){
                                 <Card.Text>
                                     Iskoristite popuste za rane rezervacije!
                                 </Card.Text>
-                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "nema")}}>Pogledaj ponude!</button></Nav.Link>
+                                <Nav.Link href = "/sviHoteli" ><button className="submit"  onClick = {()=>{localStorage.setItem("oviHoteli", "Šamoni")}}>Pogledaj ponude!</button></Nav.Link>
                             </Card.Body>
                         </Card>
                     </CardDeck>
